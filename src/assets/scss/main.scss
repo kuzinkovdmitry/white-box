@@ -1,3 +1,6 @@
+@import "icons";
+@import "menu";
+@import "mixins";
 @import "variables";
 
 body {
@@ -15,3 +18,7 @@ body {
 * {
   margin: 0;
 }
+
+@include add-font("Poppins", "poppins", "Poppins-Regular", "normal", 400);
+@include add-font("Poppins", "poppins", "Poppins-SemiBold", "normal", 600);
+@include add-font("Poppins", "poppins", "Poppins-Bold", "normal", 700);

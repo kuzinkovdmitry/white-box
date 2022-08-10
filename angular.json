@@ -7,12 +7,13 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "skipTests": true
         }
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "wb",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -28,7 +29,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": []
           },
@@ -100,11 +103,23 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "94b6b097-c131-4e59-9a2f-525cf172ec11"
+    "analytics": "94b6b097-c131-4e59-9a2f-525cf172ec11",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

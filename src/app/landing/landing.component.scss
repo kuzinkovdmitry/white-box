@@ -1,0 +1,19 @@
+@import '../../assets/scss/variables';
+
+:host {
+  display: block;
+  max-width: 1140px;
+  margin: auto;
+
+  @media only screen and (min-width: $bp-lg) and (max-width: calc($bp-xl - 1px)) {
+    max-width: 960px;
+  }
+
+  @media only screen and (min-width: $bp-md) and (max-width: calc($bp-lg - 1px)) {
+    padding: 0 24px;
+  }
+
+  @media only screen and (max-width: calc($bp-md - 1px)) {
+    padding: 0 20px;
+  }
+}

@@ -1,0 +1,9 @@
+@mixin add-font($name, $foldername, $filename, $style: normal, $weight: normal) {
+  @font-face {
+    font-family: $name;
+    font-style: $style;
+    font-weight: $weight;
+    src: local($name),
+         url("/assets/fonts/#{$foldername}/#{$filename}.ttf") format("truetype");
+  }
+}
