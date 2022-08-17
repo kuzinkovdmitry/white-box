@@ -2,7 +2,7 @@
 $bp-sm: 576px;
 $bp-md: 768px;
 $bp-lg: 992px;
-$bp-xl: 1200px;
+$bp-xl: 1400px;
 
 // fonts
 $ffpoppins: "Poppins";
@@ -11,8 +11,17 @@ $font-size: 24px;
 
 // colors
 $black: #000000;
+$boulder: #777777;
+$cararra: #efeeeb;
 $cornflower-blue: #538ee5;
+$french-gray: #c4c4c4;
+$hawkes-blue: #ddeafd;
 $mine-shaft: #373333;
 $river-bed: #465163;
 $shamrock: #36df7a;
 $white: #ffffff;
+
+// transition duration
+$duration-fast: .2s;
+$duration-default: .4s;
+$duration-slow: .6s;

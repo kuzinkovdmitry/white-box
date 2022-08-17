@@ -1,0 +1,27 @@
+<header class="header__wrapper">
+  <div class="header__logo">
+    <img src="../../../assets/img/logo.png" class="header__logo-icon" alt="Logo">
+    <p class="header__logo-label">White <span>Box</span><br>Group</p>
+  </div>
+  <div class="header__menu">
+    <div class="header__menu-bar">
+      <div class="header__menu-bar-item"
+           *ngFor="let item of menuItems"
+           [ngClass]="{'__expanded': item.expanded}">
+        <div [id]="item.id" class="header__menu-bar-btn" (click)="selectMenuItem(item)">
+          <span>{{item.label}}</span>
+          <i *ngIf="item.children?.length" class="icon-arrow-down header__menu-bar-btn-icon"></i>
+        </div>
+        <div *ngIf="item.children?.length && item.expanded"
+             class="header__menu-children"
+             wbOutsideClick
+             (outsideClick)="closeChildrenMenu($event, item)">
+          <div class="header__menu-children-block">
+            <p *ngFor="let child of item.children">{{child}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="header__menu-touch">Get in Touch</button>
+  </div>
+</header>
