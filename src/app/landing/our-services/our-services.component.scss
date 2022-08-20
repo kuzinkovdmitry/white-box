@@ -1,0 +1,53 @@
+@import '../../../assets/scss/variables';
+
+:host {
+  display: block;
+  width: 100%;
+  padding-top: 200px;
+}
+
+.our-services {
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-line {
+      flex-grow: 1;
+      height: 1px;
+      margin-right: 15px;
+      color: $black;
+    }
+
+    &-label{
+      width: fit-content;
+      font-size: 64px;
+      background-color: $white;
+      color: $mine-shaft;
+      z-index: 3;
+    }
+
+    &-symbol {
+      position: absolute;
+      top: 50%;
+      right: -100px;
+      transform: translateY(-50%);
+      font-size: 400px;
+      color: $hawkes-blue;
+      z-index: 2;
+    }
+  }
+
+  &__description {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.03em;
+    z-index: 3;
+  }
+
+}

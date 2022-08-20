@@ -8,7 +8,7 @@
 
   &__main {
     position: relative;
-    height: 800px;
+    height: 662px;
     margin-top: 48px;
 
     &-img {
@@ -137,6 +137,9 @@
 
 @media only screen and (max-width: $bp-lg) {
   .home {
+    &__main {
+      height: 470px;
+    }
     &__main-img {
       width: 900px;
     }
