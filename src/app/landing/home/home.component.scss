@@ -78,7 +78,8 @@
       height: 35px;
       width: 174px;
       margin-top: 30px;
-      background-color: $pastel-green;
+      background: linear-gradient(60deg, $pastel-green 55%, $white 55%) left;
+      background-size: 240%;
       color: $white;
       box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
       border: none;
@@ -87,20 +88,22 @@
       font-size: 15px;
       line-height: 20px;
       letter-spacing: .01em;
+      transition: $duration-default ease-in-out;
       cursor: pointer;
       z-index: 3;
 
       &:hover {
-        background-color: $white;
+        background-position: right;
         color: $pastel-green;
         border: 1px solid $pastel-green;
       }
 
       &:active {
-        background-color: $pastel-green;
+        background-position: left;
         color: $white;
         border: none;
         box-shadow: none;
+        transition: $duration-fast ease-in-out;
       }
     }
   }

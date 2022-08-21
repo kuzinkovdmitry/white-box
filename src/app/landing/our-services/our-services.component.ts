@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'wb-our-services',
@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./our-services.component.scss']
 })
 export class OurServicesComponent {
-
-  constructor() { }
+  domains = ['Retail', 'Logistics', 'Medical', 'FinTech', 'Blockchain', 'Cybersecurity'];
 
 }
