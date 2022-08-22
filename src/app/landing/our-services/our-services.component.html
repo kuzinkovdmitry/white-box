@@ -4,11 +4,19 @@
   <p class="our-services__title-symbol">O</p>
 </div>
 <p class="our-services__description">We provide software development, outsourcing and DevOps services of the highest quality.</p>
-<div class="our-services__subtitle">
+<div class="our-services__subtitle __domains">
   <p class="our-services__subtitle-label">Domains</p>
   <hr class="our-services__subtitle-line">
   <p class="our-services__subtitle-symbol">D</p>
 </div>
 <div class="our-services__domains">
   <div class="our-services__domains-item" *ngFor="let domain of domains">{{domain}}</div>
+</div>
+<div class="our-services__subtitle __technologies">
+  <hr class="our-services__subtitle-line">
+  <p class="our-services__subtitle-label">Technologies</p>
+  <p class="our-services__subtitle-symbol">T</p>
+</div>
+<div class="our-services__technologies">
+  <div class="our-services__technologies-item" *ngFor="let technology of technologies">{{technology}}</div>
 </div>

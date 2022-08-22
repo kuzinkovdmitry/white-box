@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class OurServicesComponent {
   domains = ['Retail', 'Logistics', 'Medical', 'FinTech', 'Blockchain', 'Cybersecurity'];
+  technologies = ['Web&Mobile', '.NET', 'Blockchain ', 'JS'];
 
 }

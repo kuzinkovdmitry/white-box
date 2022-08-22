@@ -5,7 +5,6 @@
 }
 
 .home {
-
   &__main {
     position: relative;
     height: 662px;
@@ -114,12 +113,15 @@
     &__main-img {
       right: 0;
     }
+
     &__main-symbol {
       left: 0;
     }
+
     &__main-phrase {
       left: 80px;
       font-size: 50px;
+
       p:first-child {
         line-height: 38px;
       }
@@ -143,27 +145,33 @@
     &__main {
       height: 470px;
     }
+
     &__main-img {
       width: 900px;
     }
+
     &__main-symbol {
       top: -59px;
       font-size: 300px;
     }
+
     &__main-phrase {
       top: 30px;
       left: 60px;
       font-size: 40px;
+
       p:first-child {
         line-height: 30px;
       }
     }
+
     &__main-description {
       margin-top: 75px;
       padding: 12px 0;
       font-size: 18px;
       line-height: 26px;
     }
+
     &__main-btn {
       width: 130px;
       margin-top: 18px;

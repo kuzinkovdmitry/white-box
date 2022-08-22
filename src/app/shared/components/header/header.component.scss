@@ -6,7 +6,6 @@
 }
 
 .header {
-
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -53,7 +52,6 @@
         position: relative;
 
         &.__expanded {
-
           .header__menu-bar-btn-icon {
             transform: translateX(-50%) rotate(180deg);
           }
