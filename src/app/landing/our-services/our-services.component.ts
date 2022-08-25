@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./our-services.component.scss']
 })
 export class OurServicesComponent {
-  domains = ['Retail', 'Logistics', 'Medical', 'FinTech', 'Blockchain', 'Cybersecurity'];
-  technologies = ['Web&Mobile', '.NET', 'Blockchain ', 'JS'];
+  public domains: string[] = ['Retail', 'Logistics', 'Medical', 'FinTech', 'Blockchain', 'Cybersecurity'];
+  public technologies: string[] = ['Web&Mobile', '.NET', 'Blockchain ', 'JS'];
 
 }

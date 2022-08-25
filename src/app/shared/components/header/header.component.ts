@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IMenuItem } from 'src/app/interfaces/header.interfaces';
+import { IMenuItem } from 'src/app/interfaces';
 
 @Component({
   selector: 'wb-header',

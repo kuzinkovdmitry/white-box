@@ -1,0 +1,68 @@
+@import '../../../assets/scss/variables';
+
+:host {
+  display: block;
+  width: 100%;
+  margin-top: 178px;
+}
+
+.management {
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    &-line {
+      flex-grow: 1;
+      height: 1px;
+      background-color: $black;
+      border-width: 0;
+    }
+
+    &-label {
+      position: relative;
+      width: fit-content;
+      font-size: 64px;
+      background-color: $white;
+      color: $mine-shaft;
+      z-index: 3;
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0 -25px 0 auto;
+        width: 25px;
+        background-color: $white;
+      }
+    }
+
+    &-symbol {
+      position: absolute;
+      top: 50%;
+      right: -100px;
+      transform: translateY(-50%);
+      font-size: 400px;
+      color: $hawkes-blue;
+      z-index: 2;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-xl) {
+  .management {
+    &__title {
+      &-label {
+        font-size: 50px;
+        margin-right: 70px;
+      }
+
+      &-symbol {
+        right: -13px;
+        font-size: 300px;
+      }
+    }
+  }
+}

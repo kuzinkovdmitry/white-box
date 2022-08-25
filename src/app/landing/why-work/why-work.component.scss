@@ -1,0 +1,94 @@
+@import '../../../assets/scss/variables';
+
+:host {
+  display: block;
+  width: 100%;
+  margin-top: 177px;
+
+  @media only screen and (max-width: $bp-xl) {
+    margin-top: 148px;
+  }
+}
+
+.why-work {
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 37px;
+
+    &-line {
+      flex-grow: 1;
+      height: 1px;
+      background-color: $black;
+      border-width: 0;
+    }
+
+    &-label {
+      width: fit-content;
+      font-size: 64px;
+      background-color: $white;
+      color: $mine-shaft;
+      z-index: 3;
+    }
+
+    &-symbol {
+      position: absolute;
+      top: -140px;
+      left: -100px;
+      font-size: 400px;
+      color: rgba(132, 222, 130, .25);
+      z-index: 2;
+    }
+  }
+
+  &__reasons {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 8px;
+    width: 100%;
+    grid-template-areas:
+      'companies companies companies companies hours hours hours hours hours technologies technologies technologies'
+      'employees employees employees effective effective effective reputation reputation reputation technologies technologies technologies';
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 160px;
+      padding: 0 13px;
+      background: linear-gradient(167.03deg, $white 3.16%, $link-water 90.63%) padding-box,
+                  linear-gradient(211.73deg, $blue-bayoux -4.07%, rgba(240, 240, 240, 0) 119.53%) border-box;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      font-size: 24px;
+      letter-spacing: -0.03em;
+      color: $mine-shaft;
+
+      &:last-child {
+        height: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-xl) {
+  .why-work {
+    &__title {
+      &-label {
+        font-size: 50px;
+      }
+
+      &-symbol {
+        top: -110px;
+        left: 0;
+        font-size: 300px;
+      }
+    }
+  }
+}

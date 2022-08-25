@@ -6,13 +6,17 @@ import { SharedModule } from '../shared/shared.module';
 import { LandingComponent } from './landing.component';
 import { HomeComponent } from './home/home.component';
 import { OurServicesComponent } from './our-services/our-services.component';
+import { WhyWorkComponent } from './why-work/why-work.component';
+import { ManagementComponent } from './management/management.component';
 
 
 @NgModule({
   declarations: [
     LandingComponent,
     HomeComponent,
-    OurServicesComponent
+    OurServicesComponent,
+    WhyWorkComponent,
+    ManagementComponent
   ],
   imports: [
     CommonModule,
