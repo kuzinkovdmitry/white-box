@@ -3,3 +3,14 @@
   <p class="management__title-label">Management</p>
   <p class="management__title-symbol">M</p>
 </div>
+<p class="management__description">Meet Our Amazing Team</p>
+<div class="management__team">
+  <div class="management__team-member"
+       *ngFor="let item of team"
+       [ngClass]="{'__active': item.selected}"
+       (click)="selectTeamMember(item)">
+    <img class="management__team-member-photo" [src]="item.photoUrl" alt="Team Member Photo">
+    <p class="management__team-member-name">{{item.name}}</p>
+    <div class="management__team-member-graph" *ngIf="item.selected">{{item.data}}</div>
+  </div>
+</div>

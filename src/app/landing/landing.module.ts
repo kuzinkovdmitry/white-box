@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { OurServicesComponent } from './our-services/our-services.component';
 import { WhyWorkComponent } from './why-work/why-work.component';
 import { ManagementComponent } from './management/management.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ManagementComponent } from './management/management.component';
     HomeComponent,
     OurServicesComponent,
     WhyWorkComponent,
-    ManagementComponent
+    ManagementComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,

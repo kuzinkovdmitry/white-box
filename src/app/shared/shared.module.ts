@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { OutsideClickDirective } from './directives/outside-click.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,9 +13,11 @@ import { OutsideClickDirective } from './directives/outside-click.directive';
     OutsideClickDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
+    ReactiveFormsModule,
     HeaderComponent,
     FooterComponent,
     OutsideClickDirective

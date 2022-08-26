@@ -49,6 +49,67 @@
       z-index: 2;
     }
   }
+
+  &__description {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    line-height: 60px;
+    letter-spacing: -0.03em;
+    color: rgba(70, 81, 99, .6);
+    z-index: 3;
+  }
+
+  &__team {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin-top: 70px;
+
+    &-member {
+      cursor: pointer;
+
+      &:hover .management__team-member-name {
+        background: rgba(83, 175, 81, .35);
+      }
+
+      &.__active {
+        margin-bottom: 400px;
+        .management__team-member-name {
+          background: rgba(83, 175, 81, .35);
+        }
+      }
+
+      &-photo {
+        width: 100%;
+      }
+
+      &-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 60px;
+        margin-top: -4px;
+        background: linear-gradient(360deg, $alto 0%, $white 100%);
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.03em;
+        transition: $duration-fast ease-in-out;
+      }
+
+      &-graph {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 400px;
+        background-color: #eeeeee;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: $bp-xl) {
@@ -63,6 +124,16 @@
         right: -13px;
         font-size: 300px;
       }
+    }
+
+    &__description {
+      font-size: 32px;
+    }
+
+    &__team-member-name {
+      height: 55px;
+      font-size: 20px;
+      line-height: 30px;
     }
   }
 }

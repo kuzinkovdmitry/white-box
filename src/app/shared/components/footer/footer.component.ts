@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { IFooterMenuItem } from 'src/app/interfaces';
 
 @Component({
   selector: 'wb-footer',
@@ -6,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-
-  constructor() { }
+  public menuList: IFooterMenuItem[] = [
+    { label: 'Home', key: 'home' },
+    { label: 'Service', key: 'service' },
+    { label: 'Cases', key: 'cases' },
+    { label: 'About us', key: 'about' },
+    { label: 'Management', key: 'management' },
+    { label: 'Contact', key: 'contact' }
+  ];
 
 }

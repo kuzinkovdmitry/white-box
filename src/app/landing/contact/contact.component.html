@@ -1,0 +1,30 @@
+<div class="contact__form">
+  <p class="contact__title">Get In Touch</p>
+  <form [formGroup]="form">
+    <input class="contact__form-name" type="text" formControlName="name" placeholder="NAME">
+    <input class="contact__form-email" type="email" formControlName="email" placeholder="E-MAIL">
+    <input class="contact__form-message" type="text" formControlName="message" placeholder="MESSAGE">
+  </form>
+  <div class="contact__send-wrapper">
+    <button type="button"
+            class="contact__send-btn"
+            [ngClass]="{'__disabled': !form.valid}"
+            (click)="sendMessage()">
+      Send
+    </button>
+  </div>
+</div>
+<div class="contact__info">
+  <p class="contact__title">Contact Info</p>
+  <div class="contact__info-phone">
+    <img src="../../../assets/img/phone.png" alt="Phone">
+    <a href="tel:+380999682332">+380999682332</a>
+  </div>
+  <div class="contact__info-mail">
+    <img src="../../../assets/img/mail.png" alt="Mail">
+    <a href="mailto:sales@whitebox.group">sales@whitebox.group</a>
+  </div>
+  <div class="contact__info-link">
+    <a href="https://www.linkedin.com/company/whiteboxgroup" target="_blank">https://www.linkedin.com/company/whiteboxgroup</a>
+  </div>
+</div>

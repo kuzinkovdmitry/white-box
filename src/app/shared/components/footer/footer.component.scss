@@ -1,0 +1,75 @@
+@import '../../../../assets/scss/variables';
+
+:host {
+  display: block;
+  padding: 31px 0 62px;
+  background-color: $gallery;
+}
+
+.footer {
+
+  &__wrapper {
+    max-width: 1140px;
+    margin: auto;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: -0.03em;
+    color: $denim;
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    gap: 22px;
+    margin-top: 71px;
+
+    &-item {
+      text-align: center;
+      font-family: $ffoxygen;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 30px;
+      letter-spacing: -0.035em;
+      transition: $duration-fast ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        color: $boulder;
+      }
+    }
+  }
+
+  &__rights {
+    margin-top: 90px;
+    text-align: center;
+    font-family: $ffoxygen;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.035em;
+    color: rgba(70, 81, 99, .7);
+  }
+}
+
+@media only screen and (min-width: $bp-lg) and (max-width: $bp-xxl) {
+  .footer__wrapper {
+    max-width: 960px;
+  }
+}
+
+@media only screen and (min-width: $bp-md) and (max-width: $bp-lg) {
+  .footer__wrapper {
+    padding: 0 24px;
+  }
+}
+
+@media only screen and (max-width: $bp-md) {
+  .footer__wrapper {
+    padding: 0 20px;
+  }
+}

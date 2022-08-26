@@ -2,18 +2,53 @@
 
 :host {
   display: block;
-  max-width: 1140px;
-  margin: auto;
 
-  @media only screen and (min-width: $bp-lg) and (max-width: $bp-xxl) {
+}
+
+.landing {
+
+  &__wrapper {
+    max-width: 1140px;
+    margin: auto;
+  }
+
+  &__sector {
+    margin-top: 100px;
+    padding: 65px 0;
+    background-color: $gallery;
+
+    &-text {
+      max-width: 1140px;
+      margin: auto;
+      font-size: 24px;
+      line-height: 36px;
+      text-align: center;
+      letter-spacing: -0.03em;
+      background: linear-gradient(270deg, $cornflower-blue -10.95%, $eucalyptus 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+}
+
+@media only screen and (min-width: $bp-lg) and (max-width: $bp-xxl) {
+  .landing__wrapper,
+  .landing__sector-text {
     max-width: 960px;
   }
+}
 
-  @media only screen and (min-width: $bp-md) and (max-width: calc($bp-lg - 1px)) {
+@media only screen and (min-width: $bp-md) and (max-width: $bp-lg) {
+  .landing__wrapper,
+  .landing__sector-text {
     padding: 0 24px;
   }
+}
 
-  @media only screen and (max-width: calc($bp-md - 1px)) {
+@media only screen and (max-width: $bp-md) {
+  .landing__wrapper,
+  .landing__sector-text {
     padding: 0 20px;
   }
 }
