@@ -37,8 +37,9 @@
 
     &-symbol {
       position: absolute;
-      top: -140px;
+      top: 50%;
       left: -100px;
+      transform: translateY(-48%);
       font-size: 400px;
       color: rgba(132, 222, 130, .25);
       z-index: 2;
@@ -85,7 +86,6 @@
       }
 
       &-symbol {
-        top: -110px;
         left: 0;
         font-size: 300px;
       }

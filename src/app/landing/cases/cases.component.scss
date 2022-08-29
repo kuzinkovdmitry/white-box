@@ -1,0 +1,66 @@
+@import '../../../assets/scss/variables';
+
+:host {
+  display: block;
+  width: 100%;
+  margin-top: 178px;
+}
+
+.cases {
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 37px;
+
+    &-line {
+      flex-grow: 1;
+      height: 1px;
+      background-color: $black;
+      border-width: 0;
+    }
+
+    &-label {
+      width: fit-content;
+      font-size: 64px;
+      background-color: $white;
+      color: $mine-shaft;
+      z-index: 3;
+    }
+
+    &-symbol {
+      position: absolute;
+      top: 50%;
+      left: -100px;
+      transform: translateY(-55%);
+      font-size: 400px;
+      color: rgba(132, 222, 130, .25);
+      z-index: 2;
+    }
+  }
+
+  &__carousel {
+    position: relative;
+    width: 100%;
+    z-index: 3;
+  }
+}
+
+@media only screen and (max-width: $bp-xl) {
+  .cases {
+    &__title {
+      &-label {
+        margin-left: 70px;
+        font-size: 50px;
+      }
+
+      &-symbol {
+        left: 0;
+        font-size: 300px;
+      }
+    }
+  }
+}

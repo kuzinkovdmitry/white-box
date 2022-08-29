@@ -1,0 +1,88 @@
+@import './variables';
+
+ngx-slick-carousel {
+  left: -81px;
+  width: calc(100% + 169px);
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    top: 100px;
+    bottom: 100px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &:before {
+    left: -1px;
+    background: linear-gradient(90deg, $white 6%, transparent 100%);
+  }
+
+  &:after {
+    right: -1px;
+    background: linear-gradient(270deg, $white 6%, transparent 100%);
+  }
+
+  .slick-track {
+    padding: 100px 0;
+  }
+
+  .slick-slide {
+    transition: transform $duration-default ease-in-out;
+    transform: scale(.75);
+
+    &.slick-center {
+      position: relative;
+      transform: scale(1.2);
+    }
+  }
+
+  .slick-dots {
+    bottom: 50px;
+
+    li {
+      margin: auto;
+      &.slick-active,
+      &:hover {
+        button:before {
+          color: $polo-blue;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .slick-prev {
+    left: 270px;
+  }
+
+  .slick-next {
+    right: 270px;
+  }
+
+  .slick-arrow {
+    height: 12px;
+    width: 7px;
+    z-index: 3;
+    &.slick-disabled {
+      display: none !important;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-xl) {
+  ngx-slick-carousel {
+    left: initial;
+    width: 100%;
+
+    .slick-prev {
+      left: 23%;
+    }
+
+    .slick-next {
+      right: 23%;
+    }
+  }
+}

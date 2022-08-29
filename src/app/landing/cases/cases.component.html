@@ -1,0 +1,14 @@
+<div class="cases__title">
+  <p class="cases__title-label">Our Cases</p>
+  <hr class="cases__title-line">
+  <p class="cases__title-symbol">O</p>
+</div>
+<div class="cases__carousel">
+  <ngx-slick-carousel class="carousel"
+                      #slickModal="slick-carousel"
+                      [config]="options">
+    <div ngxSlickItem *ngFor="let item of items" class="slide">
+      <img [src]="item.url" alt="" width="100%">
+    </div>
+  </ngx-slick-carousel>
+</div>

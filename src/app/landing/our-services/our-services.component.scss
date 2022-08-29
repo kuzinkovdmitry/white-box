@@ -63,8 +63,9 @@
 
       .our-services__subtitle-symbol {
         position: absolute;
-        top: -130px;
+        top: 50%;
         left: -100px;
+        transform: translateY(-40%);
         font-size: 400px;
         color: rgba(132, 222, 130, .25);
         z-index: 2;
@@ -76,8 +77,9 @@
 
       .our-services__subtitle-symbol {
         position: absolute;
-        top: -160px;
+        top: 50%;
         right: -67px;
+        transform: translateY(-45%);
         font-size: 400px;
         color: $hawkes-blue;
         z-index: 2;
@@ -227,7 +229,6 @@
         }
 
         .our-services__subtitle-symbol {
-          top: -100px;
           left: -23px;
           font-size: 300px;
         }
@@ -239,7 +240,6 @@
         }
 
         .our-services__subtitle-symbol {
-          top: -130px;
           right: -11px;
           font-size: 300px;
         }
