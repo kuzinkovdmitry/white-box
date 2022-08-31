@@ -8,10 +8,10 @@ import { ITeamMember } from 'src/app/interfaces';
 })
 export class ManagementComponent {
   public team: ITeamMember[] = [
-    { name: 'Serhii Ivanov', photoUrl: '../../../assets/img/management/serhii.png', selected: false, data: 'SERHII DATA' },
-    { name: 'Igor Barinov', photoUrl: '../../../assets/img/management/igor.png', selected: false, data: 'IGOR DATA' },
-    { name: 'Maxim Maslennikov', photoUrl: '../../../assets/img/management/maxim.png', selected: false, data: 'MAXIM DATA' },
-    { name: 'Andriy Alyeksyeyev', photoUrl: '../../../assets/img/management/andriy.png', selected: false, data: 'ANDRIY DATA' }
+    { name: 'Serhii Ivanov', photoUrl: '../../../assets/img/management/serhii.jpg', selected: false, data: 'SERHII DATA' },
+    { name: 'Igor Barinov', photoUrl: '../../../assets/img/management/igor.jpg', selected: false, data: 'IGOR DATA' },
+    { name: 'Maxim Maslennikov', photoUrl: '../../../assets/img/management/maxim.jpg', selected: false, data: 'MAXIM DATA' },
+    { name: 'Andriy Alyeksyeyev', photoUrl: '../../../assets/img/management/andriy.jpg', selected: false, data: 'ANDRIY DATA' }
   ];
 
   public selectTeamMember(item: ITeamMember): void {

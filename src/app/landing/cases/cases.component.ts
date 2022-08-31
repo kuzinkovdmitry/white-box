@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { SlickCarouselComponent } from 'ngx-slick-carousel';
 import { CASES } from 'src/app/data/cases';
 import { ICase } from 'src/app/interfaces';
 import { CAROUSEL_OPTIONS } from '../../options/carousel.options';
@@ -9,15 +10,23 @@ import { CAROUSEL_OPTIONS } from '../../options/carousel.options';
   styleUrls: ['./cases.component.scss']
 })
 export class CasesComponent {
+  @ViewChild('slickModal') slick: SlickCarouselComponent;
+
   public options = CAROUSEL_OPTIONS;
   public cases: ICase[] = CASES;
+  public activeCase: ICase = this.cases[0];
+  public isShowCarousel = true;
 
-  public items = [
-    { id: '1', url: '../../../assets/img/cases/onekopi-1.png' },
-    { id: '2', url: '../../../assets/img/cases/onekopi-2.png' },
-    { id: '3', url: '../../../assets/img/cases/onekopi-3.png' },
-    { id: '4', url: '../../../assets/img/cases/onekopi-4.png' },
-    { id: '5', url: '../../../assets/img/cases/onekopi-5.png' }
-  ]
+  public selectCase(item: ICase): void {
+    if (item.label === this.activeCase.label) {
+      return;
+    }
+    this.activeCase = item;
+    this.slick.slickGoTo(0);
+  }
+
+  public trackByFn(index: number) {
+    return index;
+  }
 
 }

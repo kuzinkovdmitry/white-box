@@ -107,10 +107,18 @@
 
     &-phone {
       margin-bottom: 30px;
+
+      i {
+        color: rgba(29, 219, 82, .58);
+      }
     }
 
     &-mail {
       margin-bottom: 28px;
+
+      i {
+        color: $onahau;
+      }
     }
 
     a {
@@ -130,6 +138,10 @@
         color: $boulder;
       }
     }
+  }
+
+  &__icon-block {
+    width: 40px;
   }
 
   &__title {

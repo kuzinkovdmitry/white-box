@@ -3,12 +3,28 @@
   <hr class="cases__title-line">
   <p class="cases__title-symbol">O</p>
 </div>
-<div class="cases__carousel">
-  <ngx-slick-carousel class="carousel"
-                      #slickModal="slick-carousel"
-                      [config]="options">
-    <div ngxSlickItem *ngFor="let item of items" class="slide">
-      <img [src]="item.url" alt="" width="100%">
+<div class="cases__main">
+  <p class="cases__active-label">{{activeCase.label}}</p>
+  <div class="cases__carousel">
+    <ngx-slick-carousel class="carousel"
+                        #slickModal="slick-carousel"
+                        [config]="options">
+      <div ngxSlickItem *ngFor="let image of activeCase.images; trackBy: trackByFn" class="slide">
+        <img [src]="'../../../assets/img/cases/' + image" alt="Case image" class="slide-img">
+      </div>
+    </ngx-slick-carousel>
+  </div>
+  <div class="cases__list">
+    <div class="cases__item"
+         *ngFor="let item of cases"
+         [ngClass]="{'__active': item.label === activeCase.label}"
+         (click)="selectCase(item)">
+      {{item.label}}
+      <div class="cases__technologies" *ngIf="item.label === activeCase.label">
+        {{activeCase.description}}
+      </div>
     </div>
-  </ngx-slick-carousel>
+
+  </div>
 </div>
+
