@@ -76,11 +76,20 @@
         background: rgba(83, 175, 81, .35);
       }
 
-      &.__active {
-        margin-bottom: 400px;
-        .management__team-member-name {
-          background: rgba(83, 175, 81, .35);
-        }
+      &.__active .management__team-member-name {
+        background: rgba(83, 175, 81, .35);
+      }
+
+      &:nth-child(2) .management__team-member-graph {
+        transform: translateX(calc(-1 * (25% + 2px)));
+      }
+
+      &:nth-child(3) .management__team-member-graph {
+        transform: translateX(calc(-1 * (50% + 4px)));
+      }
+
+      &:last-child .management__team-member-graph {
+        transform: translateX(calc(-1 * (75% + 6px)));
       }
 
       &-photo {
@@ -103,11 +112,14 @@
       }
 
       &-graph {
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 400px;
-        background-color: #eeeeee;
+        max-height: 0;
+        width: calc(400% + 24px);
+        background-color: $cararra;
+        overflow: hidden;
+
+        &.__visible {
+          max-height: 700px;
+        }
       }
     }
   }

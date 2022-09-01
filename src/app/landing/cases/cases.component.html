@@ -15,13 +15,21 @@
     </ngx-slick-carousel>
   </div>
   <div class="cases__list">
-    <div class="cases__item"
-         *ngFor="let item of cases"
-         [ngClass]="{'__active': item.label === activeCase.label}"
-         (click)="selectCase(item)">
-      {{item.label}}
-      <div class="cases__technologies" *ngIf="item.label === activeCase.label">
-        {{activeCase.description}}
+    <div class="cases__item" *ngFor="let item of cases">
+      <div class="cases__item-label"
+           [ngClass]="{'__active': item.label === activeCase.label}"
+           (click)="selectCase(item)">
+        {{item.label}}
+      </div>
+      <div class="cases__project" [ngClass]="{'__visible': item.label === activeCase.label}">
+        <div class="cases__project-light"></div>
+        <p class="cases__project-description">{{activeCase.description}}</p>
+        <div class="cases__project-main">
+          <p class="cases__project-label">Technologies:</p>
+          <p class="cases__project-technologies">
+            <span *ngFor="let technology of item.technologies">· {{technology}}</span>
+          </p>
+        </div>
       </div>
     </div>
 

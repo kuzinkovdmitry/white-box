@@ -11,6 +11,6 @@
        (click)="selectTeamMember(item)">
     <img class="management__team-member-photo" [src]="item.photoUrl" alt="Team Member Photo">
     <p class="management__team-member-name">{{item.name}}</p>
-    <div class="management__team-member-graph" *ngIf="item.selected">{{item.data}}</div>
+    <div class="management__team-member-graph" [ngClass]="{'__visible': item.selected}">{{item.data}}</div>
   </div>
 </div>

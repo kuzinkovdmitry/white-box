@@ -62,6 +62,22 @@ ngx-slick-carousel {
     }
   }
 
+  .slick-prev,
+  .slick-next {
+    color: $black;
+    font-weight: 200;
+    font-size: 32px;
+    line-height: 48px;
+
+    &:hover {
+      color: $river-bed;
+    }
+
+    &::before {
+      content: '';
+    }
+  }
+
   .slick-prev {
     left: 300px;
   }

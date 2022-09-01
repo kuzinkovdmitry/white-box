@@ -4,8 +4,8 @@ export const CAROUSEL_OPTIONS = {
   slidesToShow: 1,
   dots: true,
   infinite: false,
-  prevArrow: '<img class="slick-prev" src="../../../assets/img/arrow-left.png" alt="Arrow left">',
-  nextArrow: '<img class="slick-next" src="../../../assets/img/arrow-right.png" alt="Arrow right">',
+  prevArrow: '<span class="slick-prev"><</span>',
+  nextArrow: '<span class="slick-next">></span>',
   autoplaySpeed: 0,
   responsive: [
     {

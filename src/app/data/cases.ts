@@ -3,7 +3,7 @@ import { ICase } from '../interfaces';
 export const CASES: ICase[] = [
   {
     label: 'Etoodle',
-    description: 'Bendigo - Project for Bendigo Senior Secondary College to take a survey from students. System administrator can change, create survey questions and link them depend on each other answers. System involve plenty of reports that help to get info about subscribed students for lessons and his healthy info.',
+    description: 'Etoodle - Project for connecting students and tutors. Studying subjects with using grouping video chat, online drawing board and chat. Users can coordinate time in schedule, creating portfolio, pay for service',
     images: [
       'etoodle-1.png',
       'etoodle-2.png',
