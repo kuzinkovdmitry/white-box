@@ -28,9 +28,11 @@
       border-radius: 30px;
       font-family: $ffpoppins;
       font-size: 14px;
+      font-weight: 300;
 
       &::placeholder {
         font-size: 11px;
+        font-weight: 300;
         font-family: $ffpoppins;
         color: $silver-chalice;
       }
@@ -123,6 +125,7 @@
 
     a {
       font-size: 20px;
+      font-weight: 300;
       line-height: 30px;
       text-decoration: none;
       letter-spacing: -0.03em;
@@ -147,6 +150,7 @@
   &__title {
     margin-bottom: 30px;
     font-size: 40px;
+    font-weight: 300;
     line-height: 60px;
     letter-spacing: -0.03em;
     color: $denim;

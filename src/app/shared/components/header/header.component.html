@@ -8,7 +8,7 @@
       <div class="header__menu-bar-item"
            *ngFor="let item of menuItems"
            [ngClass]="{'__expanded': item.expanded}">
-        <div [id]="item.id" class="header__menu-bar-btn" (click)="selectMenuItem(item)">
+        <div class="header__menu-bar-btn" (click)="selectMenuItem(item)">
           <span>{{item.label}}</span>
           <i *ngIf="item.children?.length" class="icon-arrow-down header__menu-bar-btn-icon"></i>
         </div>
@@ -17,7 +17,10 @@
              wbOutsideClick
              (outsideClick)="closeChildrenMenu($event, item)">
           <div class="header__menu-children-block">
-            <p *ngFor="let child of item.children">{{child}}</p>
+            <p *ngFor="let child of item.children"
+               (click)="selectChildMenuItem(item, child.id)">
+              {{child.label}}
+            </p>
           </div>
         </div>
       </div>

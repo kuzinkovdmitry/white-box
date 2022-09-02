@@ -2,7 +2,8 @@
   <p class="footer__title">Menu</p>
   <div class="footer__menu">
     <div class="footer__menu-item"
-         *ngFor="let item of menuList">
+         *ngFor="let item of menuList"
+         (click)="selectMenuItem(item.id)">
       {{item.label}}
     </div>
   </div>

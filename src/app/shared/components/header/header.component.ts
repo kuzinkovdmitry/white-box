@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { IMenuItem } from 'src/app/interfaces';
+import { DOCUMENT } from '@angular/common';
+import { CasesService } from 'src/app/services/cases.service';
 
 @Component({
   selector: 'wb-header',
@@ -7,17 +9,30 @@ import { IMenuItem } from 'src/app/interfaces';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+   // TODO: fix it;
+  private readonly SCROLL_INDENT = 130;
+
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private casesService: CasesService
+  ) {}
+
   public menuItems: IMenuItem[] = [
-    { id: 'menu-home', label: 'Home', expanded: false },
-    { id: 'menu-about', label: 'About Us', expanded: false },
-    { id: 'menu-service', label: 'Service', expanded: false },
+    { id: 'menuHome', label: 'Home', expanded: false },
+    { id: 'menuAbout', label: 'About Us', expanded: false },
+    { id: 'menuServices', label: 'Services', expanded: false },
     {
-      id: 'menu-cases',
+      id: 'menuCases',
       label: 'Cases',
-      children: ['ETOODLE', 'ONEKOPI', 'JUKE', 'BENDIGO'],
+      children: [
+        { id: 1, label: 'Etoodle' },
+        { id: 2, label: 'OneKopi' },
+        { id: 3, label: 'Juke' },
+        { id: 4, label: 'Bendigo' }
+      ],
       expanded: false
     },
-    { id: 'menu-management', label: 'Management', expanded: false }
+    { id: 'menuManagement', label: 'Management', expanded: false }
   ];
 
   public selectMenuItem(item: IMenuItem): void {
@@ -29,6 +44,13 @@ export class HeaderComponent {
       }
       return;
     }
+    this.scrollToBlock(item.id);
+  }
+
+  public selectChildMenuItem(parentItem: IMenuItem, childId: number): void {
+    parentItem.expanded = false;
+    this.scrollToBlock(parentItem.id);
+    this.casesService.emitCaseChange(childId);
   }
 
   public closeChildrenMenu(event: any, item: IMenuItem): void {
@@ -38,6 +60,12 @@ export class HeaderComponent {
       return;
     }
     item.expanded = false;
+  }
+
+  private scrollToBlock(id: string): void {
+    const { top } = this.document.getElementById(id).getBoundingClientRect();
+    const currentScroll = this.document.documentElement.scrollTop;
+    window.scroll({ top: currentScroll + top - this.SCROLL_INDENT, behavior: 'smooth'});
   }
 
 }

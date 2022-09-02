@@ -20,6 +20,7 @@ body {
 }
 
 @include add-font("Poppins", "poppins", "Poppins-ExtraLight", "normal", 200);
+@include add-font("Poppins", "poppins", "Poppins-Light", "normal", 300);
 @include add-font("Poppins", "poppins", "Poppins-Regular", "normal", 400);
 @include add-font("Poppins", "poppins", "Poppins-Medium", "normal", 500);
 @include add-font("Poppins", "poppins", "Poppins-SemiBold", "normal", 600);

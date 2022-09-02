@@ -26,6 +26,7 @@
     &-label {
       width: fit-content;
       font-size: 64px;
+      font-weight: 300;
       background-color: $white;
       color: $mine-shaft;
       z-index: 3;
@@ -45,6 +46,7 @@
   &__active-label {
     text-align: center;
     font-size: 34px;
+    font-weight: 300;
     line-height: 51px;
     letter-spacing: -0.03em;
     color: $mine-shaft;
@@ -61,7 +63,8 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(4, calc(25% - 6px));
-    gap: 8px;
+    row-gap: 3px;
+    column-gap: 8px;
     margin-top: -95px;
     z-index: 3;
   }
@@ -86,6 +89,7 @@
       height: 55px;
       background: linear-gradient(360deg, $alto 0%, $white 100%);
       font-size: 24px;
+      font-weight: 300;
       line-height: 36px;
       letter-spacing: -0.03em;
       color: $mine-shaft;
@@ -102,7 +106,7 @@
         top: 50%;
         right: -20px;
         transform: translateY(-50%);
-        font-size: 12px;
+        font-size: 11px;
         color: $boulder;
         transition: transform $duration-fast ease-in-out;
       }
@@ -137,7 +141,7 @@
       position: absolute;
       inset: 0 auto 0 0;
       width: 4px;
-      background-color: #AACEA4;
+      background-color: $spring-rain;
       border-radius: 27px;
       transform: matrix(-1, 0, 0, 1, 0, 0);
     }
@@ -147,6 +151,7 @@
       padding: 19px;
       text-align: center;
       font-size: 16px;
+      font-weight: 300;
       line-height: 24px;
       border-bottom: 1px solid $french-gray;
       z-index: 3;
@@ -160,6 +165,7 @@
       text-align: center;
       margin-bottom: 23px;
       font-size: 24px;
+      font-weight: 300;
       line-height: 36px;
       letter-spacing: -0.03em;
       color: $mine-shaft;
@@ -173,6 +179,7 @@
       padding: 0 19px;
       text-align: center;
       font-size: 16px;
+      font-weight: 300;
       line-height: 24px;
     }
   }
@@ -190,6 +197,30 @@
         left: 0;
         font-size: 300px;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-md) {
+  .cases {
+
+    &__list {
+      grid-template-columns: repeat(2, calc(50% - 2px));
+    }
+
+    &__item {
+
+      &:nth-child(odd) .cases__project {
+        transform: translateX(0);
+      }
+
+      &:nth-child(even) .cases__project {
+        transform: translateX(calc(-1 * (50% + 4px)));
+      }
+    }
+
+    &__project {
+      width: calc(200% + 8px);
     }
   }
 }

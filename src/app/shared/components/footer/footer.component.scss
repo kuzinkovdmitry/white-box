@@ -16,6 +16,7 @@
   &__title {
     text-align: center;
     font-size: 32px;
+    font-weight: 300;
     line-height: 48px;
     letter-spacing: -0.03em;
     color: $denim;
@@ -31,7 +32,6 @@
     &-item {
       text-align: center;
       font-family: $ffoxygen;
-      font-weight: 700;
       font-size: 24px;
       line-height: 30px;
       letter-spacing: -0.035em;
@@ -48,7 +48,6 @@
     margin-top: 90px;
     text-align: center;
     font-family: $ffoxygen;
-    font-weight: 700;
     font-size: 24px;
     line-height: 30px;
     letter-spacing: -0.035em;

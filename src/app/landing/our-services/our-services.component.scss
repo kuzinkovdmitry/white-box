@@ -25,6 +25,7 @@
     &-label {
       width: fit-content;
       font-size: 64px;
+      font-weight: 300;
       background-color: $white;
       color: $mine-shaft;
       z-index: 3;
@@ -46,6 +47,7 @@
     text-align: center;
     margin-top: 20px;
     font-size: 24px;
+    font-weight: 300;
     line-height: 36px;
     letter-spacing: -0.03em;
     z-index: 3;
@@ -96,6 +98,7 @@
     &-label {
       width: fit-content;
       font-size: 40px;
+      font-weight: 300;
       background-color: $white;
       color: $mine-shaft;
       z-index: 3;
@@ -121,6 +124,7 @@
       border-radius: 16px;
       border: 1px solid transparent;
       font-size: 40px;
+      font-weight: 300;
       letter-spacing: -0.03em;
       transition: $duration-fast ease-in-out;
 
@@ -144,7 +148,6 @@
       justify-content: center;
       height: 94px;
       font-family: $ffoxygen;
-      font-weight: 700;
       font-size: 32px;
       line-height: 40px;
       letter-spacing: .05em;
@@ -163,7 +166,6 @@
 
     &-label {
       margin-bottom: 50px;
-      font-weight: 500;
       font-size: 32px;
       line-height: 48px;
       text-align: center;
@@ -184,6 +186,7 @@
       padding: 35px 33px;
       border: 1px solid transparent;
       font-size: 24px;
+      font-weight: 300;
       line-height: 36px;
       letter-spacing: -0.03em;
 

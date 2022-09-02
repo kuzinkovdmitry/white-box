@@ -19,6 +19,7 @@
     justify-content: space-between;
     gap: 15px;
     margin-bottom: 37px;
+    font-weight: 300;
 
     &-line {
       flex-grow: 1;
@@ -66,7 +67,7 @@
                   linear-gradient(211.73deg, $blue-bayoux -4.07%, rgba(240, 240, 240, 0) 119.53%) border-box;
       border-radius: 16px;
       border: 1px solid transparent;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 24px;
       letter-spacing: -0.03em;
       color: $mine-shaft;

@@ -1,4 +1,5 @@
 export interface ICase {
+  id: number;
   label: string;
   description: string;
   images: string[];
