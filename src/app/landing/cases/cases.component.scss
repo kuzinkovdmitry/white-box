@@ -60,14 +60,13 @@
   &__list {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, calc(25% - 6px));
     gap: 8px;
     margin-top: -95px;
     z-index: 3;
   }
 
   &__item {
-
     &:nth-child(2) .cases__project {
       transform: translateX(calc(-1 * (25% + 2px)));
     }
@@ -94,8 +93,26 @@
       box-sizing: border-box;
       cursor: pointer;
 
+      &-wrapper {
+        position: relative;
+      }
+
+      &-icon {
+        position: absolute;
+        top: 50%;
+        right: -20px;
+        transform: translateY(-50%);
+        font-size: 12px;
+        color: $boulder;
+        transition: transform $duration-fast ease-in-out;
+      }
+
       &.__active {
         border: 1px solid $goblin;
+      }
+
+      &.__collapsed .cases__item-label-icon {
+        transform: translateY(-50%) rotate(180deg);
       }
 
       &:hover {
@@ -149,13 +166,14 @@
     }
 
     &-technologies {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 0 19px;
       text-align: center;
       font-size: 16px;
       line-height: 24px;
-
-      span:not(:last-child) {
-        margin-right: 16px;
-      }
     }
   }
 }

@@ -19,9 +19,16 @@ export class CasesComponent {
 
   public selectCase(item: ICase): void {
     if (item.label === this.activeCase.label) {
+      item.collapsed = !item.collapsed;
       return;
     }
     this.activeCase = item;
+    const hasColapsed = this.cases.some((caseItem: ICase) => caseItem.collapsed)
+    this.cases = this.cases.map((caseItem: ICase) => {
+      caseItem.selected = item.label === caseItem.label;
+      caseItem.collapsed = hasColapsed;
+      return caseItem;
+    });
     this.slick.slickGoTo(0);
   }
 

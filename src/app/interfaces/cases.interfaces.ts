@@ -3,4 +3,6 @@ export interface ICase {
   description: string;
   images: string[];
   technologies: string[];
+  selected: boolean;
+  collapsed: boolean;
 }

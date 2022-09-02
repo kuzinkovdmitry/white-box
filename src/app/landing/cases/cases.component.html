@@ -17,18 +17,24 @@
   <div class="cases__list">
     <div class="cases__item" *ngFor="let item of cases">
       <div class="cases__item-label"
-           [ngClass]="{'__active': item.label === activeCase.label}"
+           [ngClass]="{
+            '__active': item.selected,
+            '__collapsed': item.collapsed
+          }"
            (click)="selectCase(item)">
-        {{item.label}}
+        <span class="cases__item-label-wrapper">
+          {{item.label}}
+          <i *ngIf="item.selected" class="icon-arrow-down cases__item-label-icon"></i>
+        </span>
       </div>
-      <div class="cases__project" [ngClass]="{'__visible': item.label === activeCase.label}">
+      <div class="cases__project" [ngClass]="{'__visible': item.selected && item.collapsed}">
         <div class="cases__project-light"></div>
-        <p class="cases__project-description">{{activeCase.description}}</p>
+        <p class="cases__project-description">{{item.description}}</p>
         <div class="cases__project-main">
           <p class="cases__project-label">Technologies:</p>
-          <p class="cases__project-technologies">
-            <span *ngFor="let technology of item.technologies">· {{technology}}</span>
-          </p>
+          <div class="cases__project-technologies">
+            <p *ngFor="let technology of item.technologies">· {{technology}}</p>
+          </div>
         </div>
       </div>
     </div>
