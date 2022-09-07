@@ -1,7 +1,8 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { IMenuItem } from 'src/app/interfaces';
-import { DOCUMENT } from '@angular/common';
 import { CasesService } from 'src/app/services/cases.service';
+import { EMenuIds } from 'src/app/enums/menu-ids.enum';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'wb-header',
@@ -9,20 +10,19 @@ import { CasesService } from 'src/app/services/cases.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-   // TODO: fix it;
-  private readonly SCROLL_INDENT = 130;
+  public menuIds = EMenuIds;
 
   constructor(
-    @Inject(DOCUMENT) private document: Document,
+    private commonService: CommonService,
     private casesService: CasesService
   ) {}
 
   public menuItems: IMenuItem[] = [
-    { id: 'menuHome', label: 'Home', expanded: false },
-    { id: 'menuAbout', label: 'About Us', expanded: false },
-    { id: 'menuServices', label: 'Services', expanded: false },
+    { id: EMenuIds.Home, label: 'Home', expanded: false },
+    { id: EMenuIds.About, label: 'About Us', expanded: false },
+    { id: EMenuIds.Services, label: 'Services', expanded: false },
     {
-      id: 'menuCases',
+      id: EMenuIds.Cases,
       label: 'Cases',
       children: [
         { id: 1, label: 'Etoodle' },
@@ -32,7 +32,7 @@ export class HeaderComponent {
       ],
       expanded: false
     },
-    { id: 'menuManagement', label: 'Management', expanded: false }
+    { id: EMenuIds.Management, label: 'Management', expanded: false }
   ];
 
   public selectMenuItem(item: IMenuItem): void {
@@ -56,16 +56,14 @@ export class HeaderComponent {
   public closeChildrenMenu(event: any, item: IMenuItem): void {
     const expandedItem = this.menuItems.find((menuItem: IMenuItem) => menuItem.expanded);
     const isExpandedItemClicked = !!event.path.find((el: any) => el.id === expandedItem?.id);
-    if(isExpandedItemClicked) {
+    if (isExpandedItemClicked) {
       return;
     }
     item.expanded = false;
   }
 
-  private scrollToBlock(id: string): void {
-    const { top } = this.document.getElementById(id).getBoundingClientRect();
-    const currentScroll = this.document.documentElement.scrollTop;
-    window.scroll({ top: currentScroll + top - this.SCROLL_INDENT, behavior: 'smooth'});
+  public scrollToBlock(id: EMenuIds): void {
+    this.commonService.scrollToElement(id);
   }
 
 }

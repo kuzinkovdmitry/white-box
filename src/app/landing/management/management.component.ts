@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EMenuIds } from 'src/app/enums/menu-ids.enum';
 import { ITeamMember } from 'src/app/interfaces';
 
 @Component({
@@ -13,6 +14,7 @@ export class ManagementComponent {
     { name: 'Maxim Maslennikov', photoUrl: '../../../assets/img/management/maxim.jpg', selected: false, data: 'MAXIM DATA' },
     { name: 'Andriy Alyeksyeyev', photoUrl: '../../../assets/img/management/andriy.jpg', selected: false, data: 'ANDRIY DATA' }
   ];
+  public menuIds = EMenuIds;
 
   public selectTeamMember(item: ITeamMember): void {
     this.team = this.team.map((teamMember: ITeamMember) => {

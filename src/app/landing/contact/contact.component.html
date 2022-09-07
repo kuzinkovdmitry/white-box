@@ -1,4 +1,4 @@
-<div class="contact__form">
+<div class="contact__form" [id]="menuIds.GetInTouch">
   <p class="contact__title">Get In Touch</p>
   <form [formGroup]="form">
     <input class="contact__form-name" type="text" formControlName="name" placeholder="NAME">
@@ -14,7 +14,7 @@
     </button>
   </div>
 </div>
-<div class="contact__info">
+<div class="contact__info" [id]="menuIds.Contact">
   <p class="contact__title">Contact Info</p>
   <div class="contact__info-phone">
     <div class="contact__icon-block">

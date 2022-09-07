@@ -1,6 +1,7 @@
-import { Component, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component } from '@angular/core';
 import { IFooterMenuItem } from 'src/app/interfaces';
+import { EMenuIds } from 'src/app/enums/menu-ids.enum';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'wb-footer',
@@ -8,26 +9,22 @@ import { IFooterMenuItem } from 'src/app/interfaces';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  // TODO: fix it;
-  private readonly SCROLL_INDENT = 130;
 
   constructor(
-    @Inject(DOCUMENT) private document: Document
+    private commonService: CommonService
   ) {}
 
   public menuList: IFooterMenuItem[] = [
-    { id: 'menuHome', label: 'Home', key: 'home' },
-    { id: 'menuServices', label: 'Service', key: 'service' },
-    { id: 'menuCases', label: 'Cases', key: 'cases' },
-    { id: 'menuAbout', label: 'About us', key: 'about' },
-    { id: 'menuManagement', label: 'Management', key: 'management' },
-    { id: 'menuContact', label: 'Contact', key: 'contact' }
+    { id: EMenuIds.Home, label: 'Home', key: 'home' },
+    { id: EMenuIds.Services, label: 'Service', key: 'service' },
+    { id: EMenuIds.Cases, label: 'Cases', key: 'cases' },
+    { id: EMenuIds.About, label: 'About us', key: 'about' },
+    { id: EMenuIds.Management, label: 'Management', key: 'management' },
+    { id: EMenuIds.Contact, label: 'Contact', key: 'contact' }
   ];
 
-  public selectMenuItem(id: string): void {
-    const { top } = this.document.getElementById(id).getBoundingClientRect();
-    const currentScroll = this.document.documentElement.scrollTop;
-    window.scroll({ top: currentScroll + top - this.SCROLL_INDENT, behavior: 'smooth'});
+  public selectMenuItem(id: EMenuIds): void {
+    this.commonService.scrollToElement(id);
   }
 
 }

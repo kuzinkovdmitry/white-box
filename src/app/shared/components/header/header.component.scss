@@ -1,15 +1,21 @@
 @import '../../../../assets/scss/variables';
 
 :host {
+  position: sticky;
+  top: 0;
   display: block;
-  padding-top: 33px;
+  margin-top: 23px;
+  padding-top: 10px;
+  background-color: $white;
+  z-index: 4;
 }
 
 .header {
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    max-width: 1140px;
+    margin: auto;
   }
 
   &__logo {
@@ -161,5 +167,23 @@
         transition: $duration-fast ease-in-out;
       }
     }
+  }
+}
+
+@media only screen and (min-width: $bp-lg) and (max-width: $bp-xxl) {
+  .header__wrapper {
+    max-width: 960px;
+  }
+}
+
+@media only screen and (min-width: $bp-md) and (max-width: $bp-lg) {
+  .header__wrapper {
+    padding: 0 24px;
+  }
+}
+
+@media only screen and (max-width: $bp-md) {
+  .header__wrapper {
+    padding: 0 20px;
   }
 }

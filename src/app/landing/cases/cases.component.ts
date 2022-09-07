@@ -5,6 +5,7 @@ import { CASES } from 'src/app/data/cases';
 import { ICase } from 'src/app/interfaces';
 import { CasesService } from 'src/app/services/cases.service';
 import { CAROUSEL_OPTIONS } from '../../options/carousel.options';
+import { EMenuIds } from 'src/app/enums/menu-ids.enum';
 
 @Component({
   selector: 'wb-cases',
@@ -18,6 +19,7 @@ export class CasesComponent implements OnInit, OnDestroy {
   public cases: ICase[] = CASES;
   public activeCase: ICase = this.cases[0];
   public isShowCarousel = true;
+  public menuIds = EMenuIds;
 
   private destroy$: Subject<void> = new Subject<void>();
 

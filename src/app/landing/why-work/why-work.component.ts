@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EMenuIds } from 'src/app/enums/menu-ids.enum';
 import { IReason } from 'src/app/interfaces';
 
 @Component({
@@ -15,5 +16,6 @@ export class WhyWorkComponent {
     { area: 'reputation', label: 'Reputation care' },
     { area: 'technologies', label: 'We excel at all required technologies' }
   ];
+  public menuIds = EMenuIds;
 
 }

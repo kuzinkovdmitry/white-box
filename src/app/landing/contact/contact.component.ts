@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { EMenuIds } from 'src/app/enums/menu-ids.enum';
 
 @Component({
   selector: 'wb-contact',
@@ -8,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
   public form: FormGroup;
+  public menuIds = EMenuIds;
 
   ngOnInit(): void {
     this.initForm();
