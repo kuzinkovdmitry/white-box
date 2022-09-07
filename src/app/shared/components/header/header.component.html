@@ -1,4 +1,5 @@
 <header class="header__wrapper">
+  <i class="icon-hamburger header__hamburger"></i>
   <div class="header__logo">
     <img src="../../../assets/img/logo.png" class="header__logo-icon" alt="Logo">
     <p class="header__logo-label">White <span>Box</span><br>Group</p>
@@ -26,5 +27,25 @@
       </div>
     </div>
     <button type="button" class="header__menu-touch" (click)="scrollToBlock(menuIds.GetInTouch)">Get in Touch</button>
+  </div>
+  <div class="header__mobile-block">
+    <div class="header__mobile-menu">
+      <img src="../../../../assets/img/long-arrow-right.png" class="header__mobile-long-arrow" alt="Long arrow">
+      <div class="header__mobile-menu-item"
+           *ngFor="let item of menuItems"
+           [ngClass]="{'__expanded': item.expanded}">
+        <p class="header__mobile-menu-label" (click)="selectMenuItem(item)">
+          <span>{{item.label}}</span>
+          <i *ngIf="item.children?.length" class="icon-arrow-down header__mobile-menu-icon"></i>
+        </p>
+        <div class="header__mobile-menu-children">
+          <p class="header__mobile-menu-children-item"
+             *ngFor="let child of item.children"
+             (click)="selectChildMenuItem(item, child.id)">
+            {{child.label}}
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
