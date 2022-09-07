@@ -8,7 +8,7 @@
       <div class="header__menu-bar-item"
            *ngFor="let item of menuItems"
            [ngClass]="{'__expanded': item.expanded}">
-        <div class="header__menu-bar-btn" (click)="selectMenuItem(item)">
+        <div [attr.data-menu-id]="item.id" class="header__menu-bar-btn" (click)="selectMenuItem(item)">
           <span>{{item.label}}</span>
           <i *ngIf="item.children?.length" class="icon-arrow-down header__menu-bar-btn-icon"></i>
         </div>
