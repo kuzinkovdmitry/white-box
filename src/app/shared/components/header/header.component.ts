@@ -10,11 +10,11 @@ import { CommonService } from 'src/app/services/common.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  private readonly MEDIUM_WIDTH = 768;
+
   public menuIds = EMenuIds;
   public isMobileMenuOpened = false;
-  public screenWidth = window.innerWidth;
-
-  private readonly MEDIUM_WIDTH = 768;
+  public isMobileView = window.innerWidth <= this.MEDIUM_WIDTH;
 
   constructor(
     private commonService: CommonService,
@@ -22,7 +22,7 @@ export class HeaderComponent {
   ) {}
 
   @HostListener('window:resize', ['$event']) onResize(event: any) {
-    this.screenWidth = event.target.innerWidth;
+    this.isMobileView = event.target.innerWidth <= this.MEDIUM_WIDTH;
   }
 
   public menuItems: IMenuItem[] = [
@@ -56,17 +56,20 @@ export class HeaderComponent {
     this.scrollToBlock(item.id);
   }
 
+  public trackByFn(index: number): number {
+    return index;
+ }
+
   public selectChildMenuItem(parentItem: IMenuItem, childId: number): void {
-    parentItem.expanded = false;
+    if (!this.isMobileView) {
+      parentItem.expanded = false;
+    }
     this.setMobileMenuState(false);
     this.scrollToBlock(parentItem.id);
     this.casesService.emitCaseChange(childId);
   }
 
   public closeChildrenMenu(event: any, item: IMenuItem): void {
-    if (this.screenWidth <= this.MEDIUM_WIDTH) {
-      return;
-    }
     const expandedItem = this.menuItems.find((menuItem: IMenuItem) => menuItem.expanded);
     const isExpandedItemClicked = !!event.path.find((el: any) => el.dataset.menuId === expandedItem?.id);
     if (isExpandedItemClicked) {

@@ -18,10 +18,6 @@
     margin: auto;
   }
 
-  &__hamburger {
-    display: none;
-  }
-
   &__logo {
     display: flex;
     align-items: center;
@@ -96,6 +92,7 @@
           transform: translateX(-50%);
           font-size: 9px;
           color: $boulder;
+          transition: transform $duration-fast ease-in-out;
         }
       }
     }
@@ -188,33 +185,39 @@
     }
   }
 
-  &__logo-icon {
-    height: 54px;
-    width: 54px;
-  }
-
-  &__menu {
-    width: auto;
-    border-bottom: none;
-
-    &-bar {
-      display: none;
-    }
-  }
-
   &__mobile-block {
     position: fixed;
     inset: 0 0 0 0;
+    pointer-events: none;
+
+    &.__opened {
+      pointer-events: initial;
+
+      .header__mobile-overlay {
+        display: block;
+      }
+
+      .header__mobile-menu {
+        transform: translateX(22px);
+      }
+    }
+  }
+
+  &__mobile-overlay {
+    position: absolute;
+    inset: 0 0 0 0;
     display: none;
-    background-color: rgba(57, 56, 56, .57);;
+    background-color: rgba(57, 56, 56, .57);
   }
 
   &__mobile-menu {
     position: relative;
     width: 302px;
-    margin: 112px 0 0 22px;
+    transform: translateX(-100%);
+    margin-top: 112px;
     padding: 77px 0 53px;
     background-color: $cararra;
+    transition: transform $duration-fast ease-in-out;
 
     &-item {
       &.__expanded {
@@ -222,8 +225,9 @@
           transform: rotate(180deg);
         }
 
-        .header__mobile-menu-children {
-          display: block;
+        .header__mobile-menu-children-wrapper {
+          max-height: 700px;
+          overflow: initial;
         }
       }
 
@@ -253,12 +257,18 @@
       font-size: 11px;
       color: $boulder;
       transform: rotate(0);
+      transition: transform $duration-fast ease-in-out;
+    }
+
+    &-children-wrapper {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height $duration-fast ease-in-out;
     }
 
     &-children {
-      display: none;
-      margin: 18px 42px 18px 31px;
-      border-left: 1px solid $french-gray;
+      padding: 18px 42px 18px 31px;
+      border-bottom: 1px solid $french-gray;
 
       &-item {
         padding: 8px 15px;
@@ -267,8 +277,17 @@
         line-height: 18px;
         letter-spacing: -0.03em;
         text-transform: uppercase;
+        border-left: 1px solid $french-gray;
         color: $mine-shaft;
         cursor: pointer;
+
+        &:first-child {
+          padding-top: 15px;
+        }
+
+        &:last-child {
+          padding-bottom: 15px;
+        }
 
         &:hover {
           color: $boulder;
@@ -305,12 +324,14 @@
       border-bottom: 1px solid $black;
     }
 
-    &__hamburger {
-      display: inline-block;
+    &__menu {
+      width: auto;
+      border-bottom: none;
     }
 
-    &__mobile-block {
-      display: inline-block;
+    &__logo-icon {
+      height: 54px;
+      width: 54px;
     }
   }
 }
