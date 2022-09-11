@@ -212,7 +212,7 @@
 
   &__mobile-menu {
     position: relative;
-    width: 302px;
+    max-width: 302px;
     transform: translateX(-100%);
     margin-top: 112px;
     padding: 77px 0 53px;
@@ -332,6 +332,15 @@
     &__logo-icon {
       height: 54px;
       width: 54px;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-sm) {
+  .header {
+    &__logo-icon {
+      height: 44px;
+      width: 44px;
     }
   }
 }
