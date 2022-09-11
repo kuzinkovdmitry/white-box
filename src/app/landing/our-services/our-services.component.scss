@@ -4,6 +4,10 @@
   display: block;
   width: 100%;
   margin-top: 200px;
+
+  @media only screen and (max-width: $bp-md) {
+    margin-top: 150px;
+  }
 }
 
 .our-services {
@@ -16,13 +20,16 @@
     gap: 15px;
 
     &-line {
+      position: relative;
       flex-grow: 1;
       height: 1px;
       background-color: $black;
       border-width: 0;
+      z-index: 3;
     }
 
     &-label {
+      position: relative;
       width: fit-content;
       font-size: 64px;
       font-weight: 300;
@@ -60,17 +67,20 @@
     justify-content: space-between;
     gap: 15px;
 
+    &-symbol {
+      position: absolute;
+      top: 50%;
+      font-size: 400px;
+      z-index: 2;
+    }
+
     &.__domains {
       margin: 150px 0 54px;
 
       .our-services__subtitle-symbol {
-        position: absolute;
-        top: 50%;
         left: -100px;
         transform: translateY(-40%);
-        font-size: 400px;
         color: rgba(132, 222, 130, .25);
-        z-index: 2;
       }
     }
 
@@ -78,13 +88,9 @@
       margin: 164px 0 54px;
 
       .our-services__subtitle-symbol {
-        position: absolute;
-        top: 50%;
         right: -67px;
         transform: translateY(-45%);
-        font-size: 400px;
         color: $hawkes-blue;
-        z-index: 2;
       }
     }
 
@@ -108,7 +114,7 @@
 
   &__domains {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     width: 100%;
     column-gap: 8px;
     row-gap: 9px;
@@ -118,15 +124,23 @@
       align-items: center;
       justify-content: center;
       height: 300px;
+      padding: 0 15px;
       background: linear-gradient(167.03deg, $white 3.16%, $link-water 90.63%) padding-box,
                   linear-gradient(211.73deg, $blue-bayoux -4.07%, rgba(240, 240, 240, 0) 119.53%) border-box;
       color: $dodger-blue;
       border-radius: 16px;
       border: 1px solid transparent;
       font-size: 40px;
+      line-height: 50px;
       font-weight: 300;
       letter-spacing: -0.03em;
       transition: $duration-fast ease-in-out;
+
+      span {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
 
       &:hover {
         box-shadow: 5px 3px 10px 4px rgba(124, 133, 148, .21);
@@ -226,6 +240,10 @@
     }
 
     &__subtitle {
+      &-symbol {
+        font-size: 300px;
+      }
+
       &.__domains {
         .our-services__subtitle-label {
           margin-left: 35px;
@@ -233,7 +251,6 @@
 
         .our-services__subtitle-symbol {
           left: -23px;
-          font-size: 300px;
         }
       }
 
@@ -244,7 +261,6 @@
 
         .our-services__subtitle-symbol {
           right: -11px;
-          font-size: 300px;
         }
       }
     }
@@ -286,6 +302,134 @@
         align-items: center;
         justify-content: center;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-md) {
+  .our-services {
+    &__title {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 0;
+
+      &-label {
+        width: calc(100% - 35px);
+        margin-right: 0;
+        text-align: right;
+      }
+
+      &-line {
+        width: calc(100% - 35px);
+      }
+
+      &-symbol {
+        right: -33px;
+      }
+    }
+
+    &__subtitle {
+
+      &.__domains {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0;
+        margin-top: 70px;
+
+        .our-services__subtitle-symbol {
+          left: -43px;
+          transform: translateY(-46%);
+        }
+
+        .our-services__subtitle-label {
+          width: calc(100% - 35px);
+          margin-left: 0;
+        }
+
+        .our-services__subtitle-line {
+          width: calc(100% - 35px);
+        }
+      }
+
+      &.__technologies {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 4px;
+        margin: 140px 0 20px;
+
+        .our-services__subtitle-label {
+          width: calc(100% - 56px);
+          text-align: right;
+          line-height: 43px;
+        }
+
+        .our-services__subtitle-line {
+          position: relative;
+          top: -4px;
+          width: calc(100% - 50px);
+          z-index: 4;
+        }
+      }
+    }
+
+    &__description {
+      line-height: 30px;
+      max-width: 507px;
+      margin: 5px auto 0;
+    }
+
+    &__domains {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      &-item {
+        height: 280px;
+        font-size: 36px;
+        line-height: 46px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-sm) {
+  .our-services {
+    &__title {
+      &-label {
+        font-size: 32px;
+      }
+
+      &-symbol {
+        right: -13px;
+        font-size: 200px;
+      }
+    }
+
+    &__subtitle {
+      &-symbol {
+        font-size: 200px;
+      }
+
+      &-label {
+        font-size: 24px;
+      }
+
+      &.__domains {
+        .our-services__subtitle-symbol {
+          left: -15px;
+        }
+      }
+    }
+
+    &__description {
+      line-height: 24px;
+      max-width: initial;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    &__domains-item {
+      height: 150px;
+      font-size: 24px;
+      line-height: 34px;
     }
   }
 }
