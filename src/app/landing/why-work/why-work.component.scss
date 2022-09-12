@@ -69,6 +69,7 @@
       border: 1px solid transparent;
       font-weight: 500;
       font-size: 24px;
+      line-height: 36px;
       letter-spacing: -0.03em;
       color: $mine-shaft;
 
@@ -80,16 +81,90 @@
 }
 
 @media only screen and (max-width: $bp-xl) {
+  .why-work__title {
+    &-label {
+      font-size: 50px;
+    }
+
+    &-symbol {
+      left: 0;
+      font-size: 300px;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-md) {
   .why-work {
     &__title {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0;
+
       &-label {
-        font-size: 50px;
+        width: calc(100% - 35px);
+        text-align: left;
+      }
+
+      &-line {
+        width: calc(100% - 35px);
       }
 
       &-symbol {
-        left: 0;
-        font-size: 300px;
+        left: -27px;
+        transform: translateY(-34%);
       }
+    }
+
+    &__reasons {
+      grid-template-areas:
+        'companies companies companies companies companies companies employees employees employees employees employees employees'
+        'effective effective effective effective hours hours hours hours hours hours hours hours'
+        'technologies technologies technologies technologies technologies technologies technologies technologies reputation reputation reputation reputation';
+
+      &-item {
+        height: 180px;
+
+        &:last-child {
+          height: 180px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-sm) {
+  .why-work {
+    &__title {
+      &-label {
+        font-size: 32px;
+      }
+
+      &-symbol {
+        font-size: 200px;
+        left: -5px;
+        transform: translateY(-50%);
+      }
+    }
+
+    &__reasons-item {
+      height: 100px;
+      font-size: 14px;
+      line-height: 21px;
+
+      &:last-child {
+        height: 100px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .why-work__reasons {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+
+    &-item {
+      grid-area: auto !important;
     }
   }
 }
