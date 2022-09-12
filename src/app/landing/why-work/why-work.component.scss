@@ -8,6 +8,10 @@
   @media only screen and (max-width: $bp-xl) {
     margin-top: 148px;
   }
+
+  @media only screen and (max-width: $bp-md) {
+    margin-top: 100px;
+  }
 }
 
 .why-work {
@@ -102,6 +106,7 @@
 
       &-label {
         width: calc(100% - 35px);
+        font-size: 40px;
         text-align: left;
       }
 

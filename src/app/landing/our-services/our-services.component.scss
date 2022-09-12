@@ -141,10 +141,6 @@
         white-space: nowrap;
         overflow: hidden;
       }
-
-      &:hover {
-        box-shadow: 5px 3px 10px 4px rgba(124, 133, 148, .21);
-      }
     }
   }
 
@@ -168,10 +164,6 @@
       background: linear-gradient(360deg, $alto 0%, $white 100%);
       color: $mine-shaft;
       transition: $duration-fast ease-in-out;
-
-      &:hover {
-        box-shadow: 5px 3px 10px 4px rgba(124, 133, 148, .21);
-      }
     }
   }
 
@@ -211,6 +203,15 @@
           color: $dodger-blue;
         }
       }
+    }
+  }
+}
+
+@media (hover: hover) {
+  .our-services__domains-item,
+  .our-services__technologies-item {
+    &:hover {
+      box-shadow: 5px 3px 10px 4px rgba(124, 133, 148, .21);
     }
   }
 }
@@ -368,12 +369,12 @@
         .our-services__subtitle-label {
           width: calc(100% - 36px);
           text-align: right;
-          line-height: 43px;
+          padding-bottom: 6px;
         }
 
         .our-services__subtitle-line {
           position: relative;
-          top: -4px;
+          top: -6px;
           width: calc(100% - 30px);
           z-index: 4;
         }
@@ -444,7 +445,7 @@
         }
 
         .our-services__subtitle-label {
-          line-height: 29px;
+          padding-bottom: 5px;
         }
       }
     }
