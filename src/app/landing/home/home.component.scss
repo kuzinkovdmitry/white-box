@@ -109,21 +109,15 @@
       transition: $duration-default ease-in-out;
       cursor: pointer;
       z-index: 3;
-
-      &:hover {
-        background-position: right;
-        color: $pastel-green;
-        border: 1px solid $pastel-green;
-      }
-
-      &:active {
-        background-position: left;
-        color: $white;
-        border: none;
-        box-shadow: none;
-        transition: $duration-fast ease-in-out;
-      }
     }
+  }
+}
+
+@media (hover: hover) {
+  .home__main-btn:hover {
+    background-position: right;
+    color: $pastel-green;
+    border: 1px solid $pastel-green;
   }
 }
 

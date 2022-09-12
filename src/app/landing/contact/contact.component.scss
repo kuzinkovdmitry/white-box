@@ -75,20 +75,6 @@
     transition: $duration-default ease-in-out;
     cursor: pointer;
 
-    &:hover {
-      background-position: right;
-      color: $pastel-green;
-      border: 1px solid $pastel-green;
-    }
-
-    &:active {
-      background-position: left;
-      color: $white;
-      border: none;
-      box-shadow: none;
-      transition: $duration-fast ease-in-out;
-    }
-
     &.__disabled {
       background: $surf-crest;
       pointer-events: none;
@@ -154,5 +140,13 @@
     line-height: 60px;
     letter-spacing: -0.03em;
     color: $denim;
+  }
+}
+
+@media (hover: hover) {
+  .contact__send-btn:hover {
+    background-position: right;
+    color: $pastel-green;
+    border: 1px solid $pastel-green;
   }
 }
