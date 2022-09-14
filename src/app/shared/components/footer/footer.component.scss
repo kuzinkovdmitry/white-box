@@ -4,6 +4,14 @@
   display: block;
   padding: 31px 0 62px;
   background-color: $gallery;
+
+  @media only screen and (max-width: $bp-md) {
+    padding: 27px 0 15px;
+  }
+
+  @media only screen and (max-width: $bp-sm) {
+    padding: 15px 0 13px;
+  }
 }
 
 .footer {
@@ -68,7 +76,51 @@
 }
 
 @media only screen and (max-width: $bp-md) {
-  .footer__wrapper {
-    padding: 0 20px;
+  .footer {
+    &__wrapper {
+      padding: 0 20px;
+    }
+
+    &__menu {
+      margin-top: 45px;
+    }
+
+    &__rights {
+      margin-top: 58px;
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-sm) {
+  .footer {
+    &__title {
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    &__menu {
+      margin-top: 24px;
+      gap: 10px;
+
+      &-item {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    &__rights {
+      margin-top: 24px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .footer__menu {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 0;
   }
 }

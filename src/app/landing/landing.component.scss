@@ -43,8 +43,33 @@
 }
 
 @media only screen and (max-width: $bp-md) {
-  .landing__wrapper,
-  .landing__sector-text {
-    padding: 0 20px;
+  .landing {
+    &__wrapper {
+      padding: 0 20px;
+    }
+
+    &__sector {
+      margin-top: 150px;
+      padding: 90px 0;
+
+      &-text {
+        padding: 0 50px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-sm) {
+  .landing {
+    &__sector {
+      padding: 35px 0;
+
+      &-text {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
   }
 }

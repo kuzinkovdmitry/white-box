@@ -5,10 +5,20 @@
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   padding: 100px 0;
+
+  @media only screen and (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    max-width: 490px;
+    margin: auto;
+  }
+
+  @media only screen and (max-width: $bp-sm) {
+    padding: 50px 0;
+  }
 }
 
 .contact {
-
   &__form {
 
     .contact__title {
@@ -87,26 +97,19 @@
     &-mail {
       display: flex;
       align-items: center;
+      margin-bottom: 28px;
 
       img {
         margin-right: 9px;
       }
     }
 
-    &-phone {
-      margin-bottom: 30px;
-
-      i {
-        color: rgba(29, 219, 82, .58);
-      }
+    &-phone i {
+      color: rgba(29, 219, 82, .58);
     }
 
-    &-mail {
-      margin-bottom: 28px;
-
-      i {
-        color: $onahau;
-      }
+    &-mail i {
+      color: $onahau;
     }
 
     a {
@@ -148,5 +151,51 @@
     background-position: right;
     color: $pastel-green;
     border: 1px solid $pastel-green;
+  }
+}
+
+@media only screen and (max-width: $bp-md) {
+  .contact {
+    &__title {
+      margin-bottom: 25px;
+      text-align: center;
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    &__send-wrapper {
+      margin-top: 23px;
+    }
+
+    &__icon-block {
+      width: 35px;
+    }
+
+    &__info-phone,
+    &__info-mail {
+      margin-bottom: 20px;
+
+      i {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-sm) {
+  .contact {
+    &__title {
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    &__info a {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &__send-btn {
+      width: 155px;
+    }
   }
 }
