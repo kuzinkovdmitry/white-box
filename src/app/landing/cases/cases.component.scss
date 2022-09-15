@@ -4,10 +4,13 @@
   display: block;
   width: 100%;
   margin-top: 178px;
+
+  @media only screen and (max-width: $bp-md) {
+    margin-top: 146px;
+  }
 }
 
 .cases {
-
   &__title {
     position: relative;
     display: flex;
@@ -55,7 +58,6 @@
   &__carousel {
     position: relative;
     width: 100%;
-    margin-top: 20px;
     z-index: 3;
   }
 
@@ -157,12 +159,12 @@
     }
 
     &-main {
-      padding: 9px 0 64px;
+      padding: 9px 0 19px;
     }
 
     &-label {
       text-align: center;
-      margin-bottom: 23px;
+      margin-bottom: 15px;
       font-size: 24px;
       font-weight: 300;
       line-height: 36px;
@@ -174,7 +176,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 10px 24px;
       padding: 0 19px;
       text-align: center;
       font-size: 16px;
@@ -202,13 +204,37 @@
 
 @media only screen and (max-width: $bp-md) {
   .cases {
+    &__title {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0;
+
+      &-label {
+        width: calc(100% - 35px);
+        font-size: 40px;
+        text-align: left;
+      }
+
+      &-line {
+        width: calc(100% - 35px);
+      }
+
+      &-symbol {
+        left: -33px;
+        transform: translateY(-52%);
+      }
+    }
+
+    &__carousel {
+      width: 100vw;
+      left: -20px;
+    }
 
     &__list {
       grid-template-columns: repeat(2, calc(50% - 2px));
     }
 
     &__item {
-
       &:nth-child(odd) .cases__project {
         transform: translateX(0);
       }
@@ -220,6 +246,53 @@
 
     &__project {
       width: calc(200% + 8px);
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-sm) {
+  .cases {
+    &__title {
+      &-label {
+        font-size: 32px;
+        font-weight: 400;
+      }
+
+      &-symbol {
+        font-size: 200px;
+        left: -5px;
+        transform: translateY(-58%);
+      }
+    }
+
+    &__active-label {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    &__item-label {
+      height: 29px;
+      font-size: 16px;
+      line-height: 24px;
+
+      &-icon {
+        font-size: 8px;
+      }
+    }
+
+    &__project-label {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__project-description,
+    &__project-technologies {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &__project-technologies {
+      gap: 6px 24px;
     }
   }
 }

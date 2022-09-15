@@ -1,6 +1,13 @@
 @import './variables';
 
 ngx-slick-carousel {
+  &.__portrait .slick-track {
+    gap: 35px;
+    @media only screen and (max-width: $bp-md) {
+      padding: 110px 0;
+    }
+  }
+
   top: -60px;
   left: -81px;
   width: calc(100% + 169px);
@@ -9,7 +16,7 @@ ngx-slick-carousel {
   &:after {
     content: '';
     position: absolute;
-    width: 250px;
+    width: 25%;
     top: 100px;
     bottom: 100px;
     pointer-events: none;
@@ -79,11 +86,12 @@ ngx-slick-carousel {
   }
 
   .slick-prev {
-    left: 300px;
+    left: 21%;
+    transform: translate(-100%, -50%);
   }
 
   .slick-next {
-    right: 300px;
+    right: 21%;
   }
 
   .slick-arrow {
@@ -96,30 +104,34 @@ ngx-slick-carousel {
   }
 }
 
-@media only screen and (max-width: $bp-xxl) {
-  ngx-slick-carousel {
-
-    .slick-prev {
-      left: 200px;
-    }
-
-    .slick-next {
-      right: 200px;
-    }
-  }
-}
-
 @media only screen and (max-width: $bp-xl) {
   ngx-slick-carousel {
     left: initial;
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: $bp-md) {
+  ngx-slick-carousel {
+    .slick-track {
+      padding: 90px 0;
+    }
 
     .slick-prev {
-      left: 180px;
+      left: 20%;
     }
 
     .slick-next {
-      right: 180px;
+      right: 20%;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-sm) {
+  ngx-slick-carousel {
+    .slick-prev,
+    .slick-next {
+      font-size: 26px;
     }
   }
 }

@@ -6,4 +6,5 @@ export interface ICase {
   technologies: string[];
   selected: boolean;
   collapsed: boolean;
+  portrait: boolean;
 }

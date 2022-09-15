@@ -7,6 +7,7 @@
   <p class="cases__active-label">{{activeCase.label}}</p>
   <div class="cases__carousel">
     <ngx-slick-carousel class="carousel"
+                        [ngClass]="{'__portrait': activeCase.portrait}"
                         #slickModal="slick-carousel"
                         [config]="options">
       <div ngxSlickItem *ngFor="let image of activeCase.images; trackBy: trackByFn" class="slide">
