@@ -19,20 +19,8 @@
     gap: 15px;
     margin-bottom: 20px;
 
-    &-line {
+    .line {
       flex-grow: 1;
-      height: 1px;
-      background-color: $black;
-      border-width: 0;
-    }
-
-    &-label {
-      width: fit-content;
-      font-size: 64px;
-      font-weight: 300;
-      background-color: $white;
-      color: $mine-shaft;
-      z-index: 3;
     }
 
     &-symbol {
@@ -189,9 +177,8 @@
 @media only screen and (max-width: $bp-xl) {
   .cases {
     &__title {
-      &-label {
+      .block-title {
         margin-left: 70px;
-        font-size: 50px;
       }
 
       &-symbol {
@@ -209,13 +196,12 @@
       align-items: flex-end;
       gap: 0;
 
-      &-label {
+      .block-title {
         width: calc(100% - 35px);
-        font-size: 40px;
         text-align: left;
       }
 
-      &-line {
+      .line {
         width: calc(100% - 35px);
       }
 
@@ -252,17 +238,10 @@
 
 @media only screen and (max-width: $bp-sm) {
   .cases {
-    &__title {
-      &-label {
-        font-size: 32px;
-        font-weight: 400;
-      }
-
-      &-symbol {
-        font-size: 200px;
-        left: -5px;
-        transform: translateY(-58%);
-      }
+    &__title-symbol {
+      font-size: 200px;
+      left: -5px;
+      transform: translateY(-58%);
     }
 
     &__active-label {

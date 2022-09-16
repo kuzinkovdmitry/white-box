@@ -331,10 +331,8 @@
 }
 
 @media only screen and (max-width: $bp-sm) {
-  .header {
-    &__logo-icon {
-      height: 44px;
-      width: 44px;
-    }
+  .header__logo-icon {
+    height: 44px;
+    width: 44px;
   }
 }

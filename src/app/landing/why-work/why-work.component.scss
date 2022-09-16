@@ -15,7 +15,6 @@
 }
 
 .why-work {
-
   &__title {
     position: relative;
     display: flex;
@@ -25,19 +24,8 @@
     margin-bottom: 37px;
     font-weight: 300;
 
-    &-line {
+    .line {
       flex-grow: 1;
-      height: 1px;
-      background-color: $black;
-      border-width: 0;
-    }
-
-    &-label {
-      width: fit-content;
-      font-size: 64px;
-      background-color: $white;
-      color: $mine-shaft;
-      z-index: 3;
     }
 
     &-symbol {
@@ -85,15 +73,9 @@
 }
 
 @media only screen and (max-width: $bp-xl) {
-  .why-work__title {
-    &-label {
-      font-size: 50px;
-    }
-
-    &-symbol {
-      left: 0;
-      font-size: 300px;
-    }
+  .why-work__title-symbol {
+    left: 0;
+    font-size: 300px;
   }
 }
 
@@ -104,13 +86,12 @@
       align-items: flex-end;
       gap: 0;
 
-      &-label {
+      .block-title {
         width: calc(100% - 35px);
-        font-size: 40px;
         text-align: left;
       }
 
-      &-line {
+      .line {
         width: calc(100% - 35px);
       }
 
@@ -139,17 +120,10 @@
 
 @media only screen and (max-width: $bp-sm) {
   .why-work {
-    &__title {
-      &-label {
-        font-size: 32px;
-        font-weight: 400;
-      }
-
-      &-symbol {
-        font-size: 200px;
-        left: -5px;
-        transform: translateY(-50%);
-      }
+    &__title-symbol {
+      font-size: 200px;
+      left: -5px;
+      transform: translateY(-50%);
     }
 
     &__reasons-item {

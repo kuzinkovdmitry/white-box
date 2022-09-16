@@ -1,0 +1,47 @@
+.block-title {
+  position: relative;
+  width: fit-content;
+  font-size: 64px;
+  font-weight: 300;
+  background-color: $white;
+  color: $mine-shaft;
+  z-index: 3;
+}
+
+.block-subtitle {
+  position: relative;
+  width: fit-content;
+  font-size: 40px;
+  font-weight: 300;
+  background-color: $white;
+  color: $mine-shaft;
+  z-index: 3;
+}
+
+@media only screen and (max-width: $bp-xl) {
+  .block-title {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: $bp-lg) {
+  .block-title {
+    font-size: 40px;
+  }
+
+  .block-subtitle {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: $bp-sm) {
+  .block-title {
+    font-size: 32px;
+    font-weight: 400;
+  }
+
+  .block-subtitle {
+    font-size: 24px;
+    font-weight: 400;
+  }
+}

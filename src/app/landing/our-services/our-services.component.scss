@@ -11,7 +11,6 @@
 }
 
 .our-services {
-
   &__title {
     position: relative;
     display: flex;
@@ -19,22 +18,9 @@
     justify-content: space-between;
     gap: 15px;
 
-    &-line {
+    .line {
       position: relative;
       flex-grow: 1;
-      height: 1px;
-      background-color: $black;
-      border-width: 0;
-      z-index: 3;
-    }
-
-    &-label {
-      position: relative;
-      width: fit-content;
-      font-size: 64px;
-      font-weight: 300;
-      background-color: $white;
-      color: $mine-shaft;
       z-index: 3;
     }
 
@@ -94,20 +80,8 @@
       }
     }
 
-    &-line {
+    .line {
       flex-grow: 1;
-      height: 1px;
-      background-color: $black;
-      border-width: 0;
-    }
-
-    &-label {
-      width: fit-content;
-      font-size: 40px;
-      font-weight: 300;
-      background-color: $white;
-      color: $mine-shaft;
-      z-index: 3;
     }
 
   }
@@ -216,20 +190,17 @@
 }
 
 @media only screen and (max-width: $bp-xxl) {
-  .our-services {
-    &__skills-item {
-      padding: 74px 16px 50px 32px;
-      font-size: 20px;
-      line-height: 30px;
-    }
+  .our-services__skills-item {
+    padding: 74px 16px 50px 32px;
+    font-size: 20px;
+    line-height: 30px;
   }
 }
 
 @media only screen and (max-width: $bp-xl) {
   .our-services {
     &__title {
-      &-label {
-        font-size: 50px;
+      .block-title {
         margin-right: 70px;
       }
 
@@ -245,7 +216,7 @@
       }
 
       &.__domains {
-        .our-services__subtitle-label {
+        .block-subtitle {
           margin-left: 35px;
         }
 
@@ -255,7 +226,7 @@
       }
 
       &.__technologies {
-        .our-services__subtitle-label {
+        .block-subtitle {
           margin-right: 35px;
         }
 
@@ -273,14 +244,6 @@
 
 @media only screen and (max-width: $bp-lg) {
   .our-services {
-    &__title-label {
-      font-size: 40px;
-    }
-
-    &__subtitle-label {
-      font-size: 35px;
-    }
-
     &__description {
       font-size: 18px;
     }
@@ -317,13 +280,13 @@
       align-items: flex-start;
       gap: 0;
 
-      &-label {
+      .block-title {
         width: calc(100% - 35px);
         margin-right: 0;
         text-align: right;
       }
 
-      &-line {
+      .line {
         width: calc(100% - 35px);
       }
 
@@ -333,7 +296,6 @@
     }
 
     &__subtitle {
-
       &.__domains {
         flex-direction: column;
         align-items: flex-end;
@@ -345,12 +307,12 @@
           transform: translateY(-46%);
         }
 
-        .our-services__subtitle-label {
+        .block-subtitle {
           width: calc(100% - 35px);
           margin-left: 0;
         }
 
-        .our-services__subtitle-line {
+        .line {
           width: calc(100% - 35px);
         }
       }
@@ -365,13 +327,13 @@
           right: -30px;
         }
 
-        .our-services__subtitle-label {
+        .block-subtitle {
           width: calc(100% - 36px);
           text-align: right;
           padding-bottom: 6px;
         }
 
-        .our-services__subtitle-line {
+        .line {
           position: relative;
           top: -6px;
           width: calc(100% - 30px);
@@ -413,26 +375,14 @@
 
 @media only screen and (max-width: $bp-sm) {
   .our-services {
-    &__title {
-      &-label {
-        font-size: 32px;
-        font-weight: 400;
-      }
-
-      &-symbol {
-        right: -13px;
-        font-size: 200px;
-      }
+    &__title-symbol {
+      right: -13px;
+      font-size: 200px;
     }
 
     &__subtitle {
       &-symbol {
         font-size: 200px;
-      }
-
-      &-label {
-        font-size: 24px;
-        font-weight: 400;
       }
 
       &.__domains .our-services__subtitle-symbol {
@@ -445,7 +395,7 @@
           transform: translateY(-55%);
         }
 
-        .our-services__subtitle-label {
+        .block-subtitle {
           padding-bottom: 5px;
         }
       }
