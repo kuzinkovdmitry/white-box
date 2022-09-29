@@ -6,16 +6,15 @@
     <input class="contact__form-message" type="text" formControlName="message" placeholder="MESSAGE">
   </form>
   <div class="contact__send-wrapper">
-    <!-- <button type="button"
-            class="contact__send-btn"
-            [ngClass]="{'__disabled': !form.valid}"
-            (click)="sendMessage()">
-      Send
-    </button> -->
     <button type="button"
             class="contact__send-btn"
+            [ngClass]="{
+              '__disabled': !form.valid,
+              '__no-click': isLoading
+            }"
             (click)="sendMessage()">
-      Send
+      <wb-spinner *ngIf="isLoading"></wb-spinner>
+      <span *ngIf="!isLoading">Send</span>
     </button>
   </div>
 </div>

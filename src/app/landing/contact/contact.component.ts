@@ -11,9 +11,10 @@ import { ToastrService } from 'ngx-toastr';
 export class ContactComponent implements OnInit {
   public form: FormGroup;
   public menuIds = EMenuIds;
+  public isLoading = false;
 
-  private successToastMessage = '<div class="toast-icon-block"><i class="icon-success"></i></div> <p class="toast-message-text">Your Message has been sent!</p> <i class="icon-phone toast-close-icon"></i>';
-  private errorToastMessage = '<div class="toast-icon-block"><i class="icon-error"></i></div> <p class="toast-message-text">Oops!<br>Something went wrong.<br><span>Please let’s try again.</span></p> <i class="icon-phone toast-close-icon"></i>';
+  private successToastMessage = '<div class="toast-icon-block"><i class="icon-success"></i></div> <p class="toast-message-text">Your Message has been sent!</p> <p class="toast-close-icon">X</p>';
+  private errorToastMessage = '<div class="toast-icon-block"><i class="icon-error"></i></div> <p class="toast-message-text">Oops!<br>Something went wrong.<br><span>Please let’s try again.</span></p> <p class="toast-close-icon">X</p>';
 
   constructor(private toastrService: ToastrService) {}
 
@@ -22,9 +23,14 @@ export class ContactComponent implements OnInit {
   }
 
   public sendMessage(): void {
+    this.isLoading = true;
     const formData = this.form.value;
-    // this.toastrService.success(this.successToastMessage);
-    this.toastrService.error(this.errorToastMessage);
+    setTimeout(() => {
+      this.toastrService.success(this.successToastMessage);
+      // this.toastrService.error(this.errorToastMessage);
+      this.form.reset();
+      this.isLoading = false;
+    }, 4000)
   }
 
   private initForm(): void {

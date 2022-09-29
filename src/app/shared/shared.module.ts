@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 import { OutsideClickDirective } from './directives/outside-click.directive';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    OutsideClickDirective
+    OutsideClickDirective,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -20,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     HeaderComponent,
     FooterComponent,
+    SpinnerComponent,
     OutsideClickDirective
   ]
 })

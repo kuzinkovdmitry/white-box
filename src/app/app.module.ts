@@ -15,8 +15,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     ToastrModule.forRoot({
-      enableHtml: true,
-      timeOut: 300000
+      enableHtml: true
     })
   ],
   bootstrap: [AppComponent]

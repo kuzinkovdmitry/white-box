@@ -89,6 +89,10 @@
       background: $surf-crest;
       pointer-events: none;
     }
+
+    &.__no-click {
+      pointer-events: none;
+    }
   }
 
   &__info {

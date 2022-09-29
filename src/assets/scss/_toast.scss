@@ -1,7 +1,6 @@
 .toast-container .ngx-toastr {
   height: 120px;
   width: 580px;
-  max-width: 580px;
   padding: 10px 40px;
   background-image: none;
   background-color: rgba(255, 255, 255, .6);
@@ -43,9 +42,18 @@
   }
 
   .toast-close-icon {
-    font-size: 29px;
+    margin-left: 10px;
+    font-family: $ffcomfortaa;
+    font-weight: 300;
     color: $alto;
+    font-size: 32px;
+    line-height: 36px;
+    transition: $duration-fast ease-in-out;
     cursor: pointer;
+
+    &:hover {
+      color: rgba($alto, .7);
+    }
   }
 
   &.toast-error {
@@ -63,6 +71,68 @@
     .toast-icon-block {
       border-right: 1px solid $pastel-green;
       color: $emerald;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-md) {
+  .toast-container .ngx-toastr {
+    height: 70px;
+    width: 330px;
+    padding: 10px 25px;
+
+    .toast-icon-block {
+      margin-right: 15px;
+      padding-right: 25px;
+
+      i {
+        font-size: 35px;
+      }
+    }
+
+    .toast-message-text {
+      font-size: 15px;
+      line-height: 20px;
+
+      span {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+
+    .toast-close-icon {
+      font-size: 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .toast-container .ngx-toastr {
+    height: 60px;
+    width: 230px;
+    padding: 5px 10px;
+
+    .toast-icon-block {
+      margin-right: 10px;
+      padding-right: 10px;
+
+      i {
+        font-size: 25px;
+      }
+    }
+
+    .toast-message-text {
+      font-size: 12px;
+      line-height: 16px;
+
+      span {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+
+    .toast-close-icon {
+      font-size: 20px;
     }
   }
 }
