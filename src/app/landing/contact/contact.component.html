@@ -6,9 +6,14 @@
     <input class="contact__form-message" type="text" formControlName="message" placeholder="MESSAGE">
   </form>
   <div class="contact__send-wrapper">
-    <button type="button"
+    <!-- <button type="button"
             class="contact__send-btn"
             [ngClass]="{'__disabled': !form.valid}"
+            (click)="sendMessage()">
+      Send
+    </button> -->
+    <button type="button"
+            class="contact__send-btn"
             (click)="sendMessage()">
       Send
     </button>
