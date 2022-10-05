@@ -6,13 +6,7 @@
 @import "toast";
 @import "variables";
 
-html {
-  overflow-x: hidden;
-}
-
 body {
-  min-width: 100%;
-  min-height: 100%;
   background-color: $white;
   color: $river-bed;
   font-family: $ffpoppins;
