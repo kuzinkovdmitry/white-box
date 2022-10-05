@@ -6,13 +6,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { OutsideClickDirective } from './directives/outside-click.directive';
+import { AnimateDirective } from './directives/animate.directive';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
     OutsideClickDirective,
-    SpinnerComponent
+    SpinnerComponent,
+    AnimateDirective
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { OutsideClickDirective } from './directives/outside-click.directive';
     HeaderComponent,
     FooterComponent,
     SpinnerComponent,
-    OutsideClickDirective
+    OutsideClickDirective,
+    AnimateDirective
   ]
 })
 export class SharedModule { }

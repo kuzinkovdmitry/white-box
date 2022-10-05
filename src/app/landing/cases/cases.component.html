@@ -1,11 +1,11 @@
 <div class="cases__title">
-  <p class="block-title">Our Cases</p>
+  <p class="block-title" wbAnimate>Our Cases</p>
   <hr class="line">
   <p class="cases__title-symbol" [id]="menuIds.Cases">O</p>
 </div>
 <div class="cases__main">
-  <p class="cases__active-label">{{activeCase.label}}</p>
-  <div class="cases__carousel">
+  <p class="cases__active-label" wbAnimate>{{activeCase.label}}</p>
+  <div class="cases__carousel" wbAnimate>
     <ngx-slick-carousel class="carousel"
                         [ngClass]="{'__portrait': activeCase.portrait}"
                         #slickModal="slick-carousel"
@@ -15,7 +15,7 @@
       </div>
     </ngx-slick-carousel>
   </div>
-  <div class="cases__list">
+  <div class="cases__list" wbAnimate>
     <div class="cases__item" *ngFor="let item of cases">
       <div class="cases__item-label"
            [ngClass]="{

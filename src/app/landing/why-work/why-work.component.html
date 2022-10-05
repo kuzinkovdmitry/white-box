@@ -1,12 +1,13 @@
 <div class="why-work__title">
-  <p class="block-title">Why to work with us</p>
+  <p class="block-title" wbAnimate>Why to work with us</p>
   <hr class="line">
   <p class="why-work__title-symbol" [id]="menuIds.About">W</p>
 </div>
 <div class="why-work__reasons">
   <div class="why-work__reasons-item"
        *ngFor="let reason of reasons"
-       [ngStyle]="{'grid-area': reason.area}">
+       [ngStyle]="{'grid-area': reason.area}"
+       wbAnimate>
     {{reason.label}}
   </div>
 </div>
