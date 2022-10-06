@@ -19,9 +19,9 @@
     <div class="cases__item" *ngFor="let item of cases">
       <div class="cases__item-label"
            [ngClass]="{
-            '__active': item.selected,
-            '__collapsed': item.collapsed
-          }"
+              '__active': item.selected,
+              '__collapsed': item.collapsed
+            }"
            (click)="selectCase(item)">
         <span class="cases__item-label-wrapper">
           {{item.label}}

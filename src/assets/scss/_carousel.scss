@@ -12,8 +12,8 @@ ngx-slick-carousel {
   left: -81px;
   width: calc(100% + 169px);
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: '';
     position: absolute;
     width: 25%;
@@ -23,12 +23,12 @@ ngx-slick-carousel {
     z-index: 1;
   }
 
-  &:before {
+  &::before {
     left: -1px;
     background: linear-gradient(90deg, $white 6%, transparent 100%);
   }
 
-  &:after {
+  &::after {
     right: -1px;
     background: linear-gradient(270deg, $white 6%, transparent 100%);
   }
@@ -95,7 +95,7 @@ ngx-slick-carousel {
   }
 
   .slick-arrow {
-    height: 12px;
+    height: fit-content;
     width: 7px;
     z-index: 3;
     &.slick-disabled {

@@ -45,14 +45,14 @@
     margin-left: 10px;
     font-family: $ffcomfortaa;
     font-weight: 300;
-    color: $alto;
+    color: $boulder;
     font-size: 32px;
     line-height: 36px;
     transition: $duration-fast ease-in-out;
     cursor: pointer;
 
     &:hover {
-      color: rgba($alto, .7);
+      color: rgba($boulder, .7);
     }
   }
 

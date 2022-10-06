@@ -37,10 +37,10 @@ export class CasesComponent implements OnInit, OnDestroy {
       return;
     }
     this.activeCase = item;
-    const hasColapsed = this.cases.some((caseItem: ICase) => caseItem.collapsed)
+    const hasCollapsed = this.cases.some((caseItem: ICase) => caseItem.collapsed);
     this.cases = this.cases.map((caseItem: ICase) => {
       caseItem.selected = item.id === caseItem.id;
-      caseItem.collapsed = hasColapsed;
+      caseItem.collapsed = hasCollapsed && item.id === caseItem.id;
       return caseItem;
     });
     this.slick.slickGoTo(0);

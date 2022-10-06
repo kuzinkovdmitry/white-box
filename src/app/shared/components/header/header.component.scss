@@ -81,6 +81,7 @@
         font-family: $ffoxygen;
         user-select: none;
         cursor: pointer;
+        transition: $duration-fast ease-in-out;
 
         &:hover {
           color: $boulder;
