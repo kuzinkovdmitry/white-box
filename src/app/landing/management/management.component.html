@@ -10,7 +10,7 @@
        [ngClass]="{'__active': item.selected}"
        wbAnimate
        (click)="selectTeamMember(item)">
-    <img class="management__team-member-photo" [src]="item.photoUrl" alt="Team Member Photo">
+    <img class="management__team-member-photo" width="400" height="400" [src]="item.photoUrl" alt="Team Member Photo">
     <p class="management__team-member-name">
       <span>{{item.name}}</span>
     </p>

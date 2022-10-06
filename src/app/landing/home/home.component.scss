@@ -13,11 +13,13 @@
     &-img {
       position: absolute;
       right: -100px;
+      height: auto;
     }
 
     &-img-tablet,
     &-img-mobile {
       display: none;
+      height: auto;
     }
 
     &-img-tablet {

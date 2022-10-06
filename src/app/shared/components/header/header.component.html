@@ -3,7 +3,7 @@
   <i class="icon-hamburger header__hamburger" *ngIf="isMobileView" (click)="setMobileMenuState(true)"></i>
 
   <div class="header__logo">
-    <img src="../../../assets/img/logo.png" class="header__logo-icon" alt="Logo">
+    <img src="../../../assets/img/logo.png" width="63" height="63" class="header__logo-icon" alt="Logo">
     <p class="header__logo-label">White <span>Box</span><br>Group</p>
   </div>
 
@@ -37,7 +37,7 @@
        [ngClass]="{'__opened': isMobileMenuOpened}">
     <div class="header__mobile-overlay" (click)="setMobileMenuState(false)"></div>
     <div class="header__mobile-menu">
-      <img src="../../../../assets/img/long-arrow-right.png" class="header__mobile-long-arrow" alt="Long arrow">
+      <img src="../../../../assets/img/long-arrow-right.png" width="76" height="6" class="header__mobile-long-arrow" alt="Long arrow">
       <div class="header__mobile-menu-item"
            *ngFor="let item of menuItems; trackBy: trackByFn"
            [ngClass]="{'__expanded': item.expanded}">
