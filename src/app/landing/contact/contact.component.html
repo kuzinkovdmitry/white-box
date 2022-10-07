@@ -1,23 +1,20 @@
 <div class="contact__form" [id]="menuIds.GetInTouch">
   <div wbAnimate>
     <p class="contact__title">Get In Touch</p>
-    <form [formGroup]="form">
+    <form [formGroup]="form" (ngSubmit)="sendMessage()">
       <input class="contact__form-name" type="text" formControlName="name" placeholder="NAME">
       <input class="contact__form-email" type="email" formControlName="email" placeholder="E-MAIL">
       <input class="contact__form-message" type="text" formControlName="message" placeholder="MESSAGE">
-    </form>
-    <div class="contact__send-wrapper">
-      <button type="button"
+      <button type="submit"
               class="contact__send-btn"
               [ngClass]="{
                 '__disabled': !form.valid,
                 '__no-click': isLoading
-              }"
-              (click)="sendMessage()">
-        <wb-spinner *ngIf="isLoading"></wb-spinner>
-        <span *ngIf="!isLoading">Send</span>
-      </button>
-    </div>
+              }">
+          <wb-spinner *ngIf="isLoading"></wb-spinner>
+          <span *ngIf="!isLoading">Send</span>
+        </button>
+    </form>
   </div>
 </div>
 <div class="contact__info" [id]="menuIds.Contact">

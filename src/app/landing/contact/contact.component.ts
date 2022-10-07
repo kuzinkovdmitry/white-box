@@ -23,6 +23,9 @@ export class ContactComponent implements OnInit {
   }
 
   public sendMessage(): void {
+    if (this.form.invalid || this.isLoading) {
+      return;
+    }
     this.isLoading = true;
     const formData = this.form.value;
     setTimeout(() => {
