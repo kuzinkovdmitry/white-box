@@ -37,6 +37,11 @@ ngx-slick-carousel {
     display: flex;
     align-items: center;
     padding: 130px 0;
+
+    &::before {
+      display: block;
+      height: 130px;
+    }
   }
 
   .slick-slide {
