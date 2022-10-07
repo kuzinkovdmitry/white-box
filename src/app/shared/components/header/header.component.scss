@@ -83,10 +83,6 @@
         cursor: pointer;
         transition: $duration-fast ease-in-out;
 
-        &:hover {
-          color: $boulder;
-        }
-
         &-icon {
           position: absolute;
           left: 50%;
@@ -131,10 +127,6 @@
           &:last-child {
             margin-bottom: 0;
           }
-
-          &:hover {
-            color: $boulder;
-          }
         }
       }
     }
@@ -166,10 +158,6 @@
     font-size: 18px;
     color: $mine-shaft;
     cursor: pointer;
-
-    &:hover {
-      color: $boulder;
-    }
   }
 
   &__mobile-block {
@@ -234,10 +222,6 @@
       text-transform: uppercase;
       color: $mine-shaft;
       cursor: pointer;
-
-      &:hover {
-        color: $boulder;
-      }
     }
 
     &-icon {
@@ -275,10 +259,6 @@
         &:last-child {
           padding-bottom: 15px;
         }
-
-        &:hover {
-          color: $boulder;
-        }
       }
     }
   }
@@ -296,6 +276,14 @@
     color: $cornflower-blue;
     border: 1px solid $cornflower-blue;
     box-shadow: none;
+  }
+
+  .header__mobile-menu-label:hover,
+  .header__mobile-menu-children-item:hover,
+  .header__hamburger:hover,
+  .header__menu-bar-btn:hover,
+  .header__menu-children-block p:hover {
+    color: $boulder;
   }
 }
 

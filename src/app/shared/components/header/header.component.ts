@@ -71,7 +71,7 @@ export class HeaderComponent {
 
   public closeChildrenMenu(event: any, item: IMenuItem): void {
     const expandedItem = this.menuItems.find((menuItem: IMenuItem) => menuItem.expanded);
-    const isExpandedItemClicked = !!event.path.find((el: any) => el.dataset.menuId === expandedItem?.id);
+    const isExpandedItemClicked = !!event.path.find((el: any) => el.dataset?.menuId === expandedItem?.id);
     if (isExpandedItemClicked) {
       return;
     }
