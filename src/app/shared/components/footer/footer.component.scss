@@ -44,10 +44,6 @@
       letter-spacing: -0.035em;
       transition: $duration-fast ease-in-out;
       cursor: pointer;
-
-      &:hover {
-        color: $boulder;
-      }
     }
   }
 
@@ -59,6 +55,12 @@
     line-height: 30px;
     letter-spacing: -0.035em;
     color: rgba(70, 81, 99, .7);
+  }
+}
+
+@media (hover: hover) {
+  .footer__menu-item:hover {
+    color: $boulder;
   }
 }
 

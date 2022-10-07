@@ -107,10 +107,6 @@
       &.__collapsed .cases__item-label-icon {
         transform: translateY(-50%) rotate(180deg);
       }
-
-      &:hover {
-        box-shadow: 5px 3px 10px 4px rgba(124, 133, 148, .21);
-      }
     }
   }
 
@@ -171,6 +167,12 @@
       font-weight: 300;
       line-height: 24px;
     }
+  }
+}
+
+@media (hover: hover) {
+  .cases__item-label:hover {
+    box-shadow: 5px 3px 10px 4px rgba(124, 133, 148, .21);
   }
 }
 

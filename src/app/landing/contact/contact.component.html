@@ -1,38 +1,42 @@
-<div class="contact__form" [id]="menuIds.GetInTouch" wbAnimate>
-  <p class="contact__title">Get In Touch</p>
-  <form [formGroup]="form">
-    <input class="contact__form-name" type="text" formControlName="name" placeholder="NAME">
-    <input class="contact__form-email" type="email" formControlName="email" placeholder="E-MAIL">
-    <input class="contact__form-message" type="text" formControlName="message" placeholder="MESSAGE">
-  </form>
-  <div class="contact__send-wrapper">
-    <button type="button"
-            class="contact__send-btn"
-            [ngClass]="{
-              '__disabled': !form.valid,
-              '__no-click': isLoading
-            }"
-            (click)="sendMessage()">
-      <wb-spinner *ngIf="isLoading"></wb-spinner>
-      <span *ngIf="!isLoading">Send</span>
-    </button>
+<div class="contact__form" [id]="menuIds.GetInTouch">
+  <div wbAnimate>
+    <p class="contact__title">Get In Touch</p>
+    <form [formGroup]="form">
+      <input class="contact__form-name" type="text" formControlName="name" placeholder="NAME">
+      <input class="contact__form-email" type="email" formControlName="email" placeholder="E-MAIL">
+      <input class="contact__form-message" type="text" formControlName="message" placeholder="MESSAGE">
+    </form>
+    <div class="contact__send-wrapper">
+      <button type="button"
+              class="contact__send-btn"
+              [ngClass]="{
+                '__disabled': !form.valid,
+                '__no-click': isLoading
+              }"
+              (click)="sendMessage()">
+        <wb-spinner *ngIf="isLoading"></wb-spinner>
+        <span *ngIf="!isLoading">Send</span>
+      </button>
+    </div>
   </div>
 </div>
-<div class="contact__info" [id]="menuIds.Contact" wbAnimate>
-  <p class="contact__title">Contact Info</p>
-  <div class="contact__info-phone">
-    <div class="contact__icon-block">
-      <i class="icon-phone"></i>
+<div class="contact__info" [id]="menuIds.Contact">
+  <div wbAnimate>
+    <p class="contact__title">Contact Info</p>
+    <div class="contact__info-phone">
+      <div class="contact__icon-block">
+        <i class="icon-phone"></i>
+      </div>
+      <a href="tel:+380999682332">+380999682332</a>
     </div>
-    <a href="tel:+380999682332">+380999682332</a>
-  </div>
-  <div class="contact__info-mail">
-    <div class="contact__icon-block">
-      <i class="icon-mail"></i>
+    <div class="contact__info-mail">
+      <div class="contact__icon-block">
+        <i class="icon-mail"></i>
+      </div>
+      <a href="mailto:sales@whitebox.group">sales@whitebox.group</a>
     </div>
-    <a href="mailto:sales@whitebox.group">sales@whitebox.group</a>
-  </div>
-  <div class="contact__info-link">
-    <a href="https://www.linkedin.com/company/whiteboxgroup" target="_blank">https://www.linkedin.com/company/whiteboxgroup</a>
+    <div class="contact__info-link">
+      <a href="https://www.linkedin.com/company/whiteboxgroup" target="_blank">https://www.linkedin.com/company/whiteboxgroup</a>
+    </div>
   </div>
 </div>

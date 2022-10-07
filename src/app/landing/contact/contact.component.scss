@@ -129,10 +129,6 @@
       &:visited {
         color: $river-bed;
       }
-
-      &:hover {
-        color: $boulder;
-      }
     }
   }
 
@@ -155,6 +151,10 @@
     background-position: right;
     color: $pastel-green;
     border: 1px solid $pastel-green;
+  }
+
+  .contact__info a:hover {
+    color: $boulder;
   }
 }
 
