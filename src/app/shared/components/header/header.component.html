@@ -4,11 +4,11 @@
 
   <div class="header__logo">
     <img src="../../../assets/img/logo.png" width="63" height="63" class="header__logo-icon" alt="Logo">
-    <p class="header__logo-label">White <span>Box</span><br>Group</p>
+    <h1 class="header__logo-label">White <span>Box</span><br>Group</h1>
   </div>
 
   <div class="header__menu">
-    <div class="header__menu-bar" *ngIf="!isMobileView">
+    <nav class="header__menu-bar" *ngIf="!isMobileView">
       <div class="header__menu-bar-item"
            *ngFor="let item of menuItems; trackBy: trackByFn"
            [ngClass]="{'__expanded': item.expanded}">
@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </nav>
     <button type="button" class="header__menu-touch" (click)="scrollToBlock(menuIds.GetInTouch)">Get in Touch</button>
   </div>
 
@@ -36,7 +36,7 @@
        *ngIf="isMobileView"
        [ngClass]="{'__opened': isMobileMenuOpened}">
     <div class="header__mobile-overlay" (click)="setMobileMenuState(false)"></div>
-    <div class="header__mobile-menu">
+    <nav class="header__mobile-menu">
       <img src="../../../../assets/img/long-arrow-right.png" width="76" height="6" class="header__mobile-long-arrow" alt="Long arrow">
       <div class="header__mobile-menu-item"
            *ngFor="let item of menuItems; trackBy: trackByFn"
@@ -55,7 +55,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   </div>
 
 </header>

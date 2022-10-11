@@ -1,5 +1,5 @@
 <div class="cases__title">
-  <p class="block-title" wbAnimate>Our Cases</p>
+  <h2 class="block-title" wbAnimate>Our Cases</h2>
   <hr class="line" wbAnimate>
   <p class="cases__title-symbol" [id]="menuIds.Cases">O</p>
 </div>
@@ -13,7 +13,7 @@
                           '__active': case.id === activeCase.id
                         }"
                         [config]="options">
-      <div ngxSlickItem *ngFor="let image of case.images" class="slide">
+      <div ngxSlickItem *ngFor="let image of case.images; trackBy: trackByFn" class="slide">
         <img [src]="'../../../assets/img/cases/' + image" alt="Case image" class="slide-img">
       </div>
     </ngx-slick-carousel>

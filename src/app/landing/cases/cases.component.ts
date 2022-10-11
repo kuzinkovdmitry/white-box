@@ -28,6 +28,10 @@ export class CasesComponent implements OnInit, OnDestroy {
     this.checkCaseChanges();
   }
 
+  public trackByFn(index: number): number {
+    return index;
+  }
+
   public selectCase(item: ICase): void {
     if (item.id === this.activeCase.id) {
       item.collapsed = !item.collapsed;

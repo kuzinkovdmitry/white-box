@@ -1,6 +1,6 @@
 <div class="contact__form" [id]="menuIds.GetInTouch">
   <div wbAnimate>
-    <p class="contact__title">Get In Touch</p>
+    <h3 class="contact__title">Get In Touch</h3>
     <form [formGroup]="form" (ngSubmit)="sendMessage()">
       <input class="contact__form-name" type="text" formControlName="name" placeholder="NAME">
       <input class="contact__form-email" type="email" formControlName="email" placeholder="E-MAIL">
@@ -19,7 +19,7 @@
 </div>
 <div class="contact__info" [id]="menuIds.Contact">
   <div wbAnimate>
-    <p class="contact__title">Contact Info</p>
+    <h3 class="contact__title">Contact Info</h3>
     <div class="contact__info-phone">
       <div class="contact__icon-block">
         <i class="icon-phone"></i>
