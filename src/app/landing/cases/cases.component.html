@@ -7,10 +7,13 @@
   <p class="cases__active-label" wbAnimate>{{activeCase.label}}</p>
   <div class="cases__carousel" wbAnimate>
     <ngx-slick-carousel class="carousel"
-                        [ngClass]="{'__portrait': activeCase.portrait}"
-                        #slickModal="slick-carousel"
+                        *ngFor="let case of cases"
+                        [ngClass]="{
+                          '__portrait': case.portrait,
+                          '__active': case.id === activeCase.id
+                        }"
                         [config]="options">
-      <div ngxSlickItem *ngFor="let image of activeCase.images; trackBy: trackByFn" class="slide">
+      <div ngxSlickItem *ngFor="let image of case.images" class="slide">
         <img [src]="'../../../assets/img/cases/' + image" alt="Case image" class="slide-img">
       </div>
     </ngx-slick-carousel>

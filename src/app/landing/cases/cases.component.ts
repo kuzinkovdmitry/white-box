@@ -1,6 +1,5 @@
-import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
-import { SlickCarouselComponent } from 'ngx-slick-carousel';
 import { CASES } from 'src/app/data/cases';
 import { ICase } from 'src/app/interfaces';
 import { CasesService } from 'src/app/services/cases.service';
@@ -13,8 +12,6 @@ import { EMenuIds } from 'src/app/enums/menu-ids.enum';
   styleUrls: ['./cases.component.scss']
 })
 export class CasesComponent implements OnInit, OnDestroy {
-  @ViewChild('slickModal') slick: SlickCarouselComponent;
-
   public options = CAROUSEL_OPTIONS;
   public cases: ICase[] = CASES;
   public activeCase: ICase = this.cases[0];
@@ -43,11 +40,6 @@ export class CasesComponent implements OnInit, OnDestroy {
       caseItem.collapsed = hasCollapsed && item.id === caseItem.id;
       return caseItem;
     });
-    this.slick.slickGoTo(0);
-  }
-
-  public trackByFn(index: number) {
-    return index;
   }
 
   private checkCaseChanges(): void {

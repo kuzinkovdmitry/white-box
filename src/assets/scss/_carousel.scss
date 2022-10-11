@@ -1,6 +1,13 @@
 @import './variables';
 
 ngx-slick-carousel {
+  top: -60px;
+  left: -81px;
+  width: calc(100% + 169px);
+  max-height: 0;
+  margin-bottom: 0 !important;
+  visibility: hidden;
+
   &.__portrait .slick-track {
     gap: 35px;
     @media only screen and (max-width: $bp-md) {
@@ -8,9 +15,10 @@ ngx-slick-carousel {
     }
   }
 
-  top: -60px;
-  left: -81px;
-  width: calc(100% + 169px);
+  &.__active {
+    max-height: initial;
+    visibility: visible;
+  }
 
   &::before,
   &::after {
