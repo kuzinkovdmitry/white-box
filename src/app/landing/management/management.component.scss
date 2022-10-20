@@ -62,24 +62,6 @@
     z-index: 3;
 
     &-member {
-      cursor: pointer;
-
-      &.__active .management__team-member-name {
-        background: rgba(83, 175, 81, .35);
-      }
-
-      &:nth-child(2) .management__team-member-graph {
-        transform: translateX(calc(-1 * (25% + 2px)));
-      }
-
-      &:nth-child(3) .management__team-member-graph {
-        transform: translateX(calc(-1 * (50% + 4px)));
-      }
-
-      &:last-child .management__team-member-graph {
-        transform: translateX(calc(-1 * (75% + 6px)));
-      }
-
       &-photo {
         height: auto;
         width: 100%;
@@ -104,24 +86,7 @@
           overflow: hidden;
         }
       }
-
-      &-graph {
-        max-height: 0;
-        width: calc(400% + 24px);
-        background-color: $cararra;
-        overflow: hidden;
-
-        &.__visible {
-          max-height: 700px;
-        }
-      }
     }
-  }
-}
-
-@media (hover: hover) {
-  .management__team-member:hover .management__team-member-name {
-    background: rgba(83, 175, 81, .35);
   }
 }
 
@@ -183,20 +148,6 @@
     &__team {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       margin-top: 40px;
-
-      &-member {
-        &:nth-child(odd) .management__team-member-graph {
-          transform: translateX(0);
-        }
-
-        &:nth-child(even) .management__team-member-graph {
-          transform: translateX(calc(-1 * (50% + 4px)));
-        }
-
-        &-graph {
-          width: calc(200% + 8px);
-        }
-      }
     }
   }
 }

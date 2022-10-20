@@ -7,13 +7,10 @@
 <div class="management__team">
   <div class="management__team-member"
        *ngFor="let item of team"
-       [ngClass]="{'__active': item.selected}"
-       wbAnimate
-       (click)="selectTeamMember(item)">
-    <img class="management__team-member-photo" width="400" height="400" [src]="item.photoUrl" alt="Team Member Photo">
+       wbAnimate>
+    <img class="management__team-member-photo" width="400" height="400" [src]="item.photoUrl" [alt]="item.name + 'photo'">
     <p class="management__team-member-name">
       <span>{{item.name}}</span>
     </p>
-    <div class="management__team-member-graph" [ngClass]="{'__visible': item.selected}">{{item.data}}</div>
   </div>
 </div>
